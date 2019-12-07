@@ -44,7 +44,7 @@
   citecolor    = red      % Colour of citations
 }
 
-\usepackage[obeyspaces]{url}
+%\usepackage[obeyspaces]{url}
 %\PassOptionsToPackage{obeyspaces}{url}
 
 \usepackage{enumitem}
@@ -108,7 +108,6 @@
 \definecolor{shadecolor}{rgb}{1,1,0.95}
 \definecolor{shade}{rgb}{1,1,0.95}
 
-
 \lstset{ %
 language=R, % the language of the code
 basicstyle=\footnotesize, % the size of the fonts that are used for the code
@@ -161,29 +160,26 @@ morekeywords={*,...} % if you want to add more keywords to the set
 
 \begin{abstract}
 
-This report summarises the main outcomes of MyDas with respect to the main task, which were i) Stock prioritisation, ii) Data Collation, iii) Framework Development; iv) Performance Appraisal, v) Reference Point Comparison, vi) Liaison with Marine Institute, and vii) Linkage with other Projects.
+This report summarises the main activities and outcomes of MyDas with respect to the tasks, namely i) Stock prioritisation, ii) Data Collation, iii) Framework Development; iv) Performance Appraisal, v) Reference Point Comparison, vi) Liaison with Marine Institute, and vii) Linkage with other Projects.
 
-Initially a number of stocks were proposed and fisheries dependent and independent data and history characteristics collated.  After discussion with the Marine Institute (MI) these were narrowed down to seven stocks based on economic and ecological importance, i.e. sprat, brill, turbot, pollack, ray, razor clams and lobster. 
+The main outcomes were i) R packages with documentation, ii)  vignettes with reproducible examples, iii) peer review papers, and iv) example management proceedures for data poor stocks.
 
-A variety of data-poor stock assessment models, based on length and catch only methods, were  implemented in R and compared using simlation testing. The best performing methods identified and a Managemet Strategy Evaluation framework developed to allow the performance of the methods to be compared. 
+Initially a number of stocks were proposed as potential case studies and fisheries dependent and independent data and life history characteristics were collated.  After discussion with the Marine Institute (MI) seven case study stocks, i.e. sprat, brill, turbot, pollack, ray, razor clams and lobster, were selected, based on economic and ecological importance.
 
-Two main products of the project are the mydas and FLife R packages for simulation testing, these packages also include a number of vignettes with examples. The framework was tested at an MI workshop and results presented at the ICES Workshop On The Development Of Quantitative Assessment Methodologies Based On Life-History Traits, Exploitation Characteristics, And Other Relevant Parameters For Data-Limited Stocks (WKLIFE).
-
-The main outcomes were i) R packages with documentation, ii)  vignettes with reproducible examples, iii) peer review papers, and iv) management proceedures for data poor stocks.
+Data-poor stock assessment models, based on length and catch, in use worldwide were reviewed and simulation tested. The best performing methods were identified implemented in a Management Strategy Evaluation framework. Two R packages, mydas and FLife, were developed for simulating stocks based on life history theory and testing data poor harvest control rules, and vignettes with examples were developed. The framework was tested at an MI workshop and results presented at the ICES Workshop On The Development Of Quantitative Assessment Methodologies Based On Life-History Traits, Exploitation Characteristics, And Other Relevant Parameters For Data-Limited Stocks (WKLIFE).
 
 
 \end{abstract}
-\newpage
 
 \newpage
 \tableofcontents
+
 \newpage
-
 \section{Introduction}
-%\input{include/intro.tex}
+\input{include/intro.tex}
 
-\section{Task Summary}
-%\input{include/tasks.tex}
+\section{Tasks}
+There were seven tasks namely: i) Stock prioritisation, ii) Data Collation, iii) Framework Development; iv) Performance Appraisal, v) Reference Point Comparison, vi) Liaison with Marine Institute, and vii) Linkage with other Projects. 
 
 \subsection{Stock Prioritisation}
 %\textit{\textbf{A number of example stocks were initially identified, and  the final list of stocks was prioritised using criteria like: economic value of the stock; importance of the species to the ecosystem (key-stone species); sensitivity to the impacts of fishing; available data.}}
@@ -223,7 +219,7 @@ The main outcomes were i) R packages with documentation, ii)  vignettes with rep
 \begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
  \item \textbf{Objective} Method performance appraisal was based on the develop of a set of diagnostics that can be applied across a range of models to assess the stability of the model, sensitivity to assumptions and bias.
  
- \item \textbf{Outcome} A simulation framework based on R was developed using \href{http://www.flr-project.org/}{FLR} a collection of tools for quantitative fisheries science, developed in the R language, that facilitates the construction of simulation models of fisheries systems. Two R packages were developed, \href{https://github.com/flr/flife}{FLife} which uses life history theory to build simulation models and 
+ \item \textbf{Outcome} A simulation framework based on R was developed using \href{http://www.flr-project.org/}{FLR}, a collection of tools for quantitative fisheries science developed in the R language, that facilitates the construction of simulation models of fisheries systems. Two R packages were developed, \href{https://github.com/flr/flife}{FLife} which uses life history theory to build simulation models and 
     \href{https://github.com/flr/mydas/wiki}{mydas} 
     which provides an interface to the data poor methods. A variety of \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes.html}{vignettes} document the approach and provide worked examples. 
     \begin{itemize}
@@ -291,27 +287,15 @@ The main outcomes were i) R packages with documentation, ii)  vignettes with rep
 \input{include/task4.tex} 
 
 \newpage\section{Simulations}
-%\input{include/task5.tex}
+\input{include/task5.tex}
 
 \newpage\section{Liason and Linkage}
 %\input{include/task6.tex}
 %\input{include/task7.tex}
 
-
-%\includegraphics{/home/laurence/Desktop/sea++/mydas/final/report/figs/1-pairwise-1.png}
-%\includegraphics{/home/laurence/Desktop/sea++/mydas/final/report/figs/Figure_1.png}
-%\includegraphics{/home/laurence/Desktop/sea++/mydas/final/report/figs/2-turbot-unnamed-chunk-8-1.png}
-%\includegraphics{/home/laurence/Desktop/sea++/mydas/final/papers/roc/tex/lib.png}
-%\includegraphics{/home/laurence/Desktop/sea++/mydas/final/papers/roc/tex/roc-inds-1.png}
-%\includegraphics{/home/laurence/Desktop/sea++/mydas/final/papers/roc/tex/roc-finallfds-1.png}
-%\includegraphics{/home/laurence/Desktop/sea++/mydas/final/papers/roc/tex/roc-finalunnamed-chunk-2-1.png}
-%\includegraphics{/home/laurence/Desktop/sea++/mydas/final/papers/roc/tex/roc-ts-1.png}
-
-
 \newpage\clearpage
-\bibliography{/home/laurence/Desktop/sea++/mydas/final/report/mydas.bib}
+\bibliography{mydas.bib}
 \bibliographystyle{abbrvnat}
-%%input{mydas.bbl}
 
 \flushbottom
 \newpage
@@ -319,9 +303,7 @@ The main outcomes were i) R packages with documentation, ii)  vignettes with rep
 %% APPENDICES
 \newpage
 
-
 \begin{appendices}
-
 
 \newpage\section{}
 
@@ -331,45 +313,43 @@ The main outcomes were i) R packages with documentation, ii)  vignettes with rep
 
 \subsection{Dataset Summary}\label{appendix:datsets}
 
-\includepdf[pages=-,pagecommand={},width=\textwidth]{/home/laurence/Desktop/sea++/mydas/final/tasks/2/dataSmry.pdf}
+\includepdf[pages=-,pagecommand={},width=\textwidth]{include/dataSmry.pdf}
 
 \section{Peer Review Papers}
 
 \subsection{Linking the performance of a data-limited empirical catch rule to life-history traits}
-%\includepdf[pages=-,pagecommand={},width=\textwidth]{../papers/empricalRule/ICESJMS_2019_350_R1_Proof_hi.pdf}
+\includepdf[pages=-,pagecommand={},width=\textwidth]{include/ICESJMS_2019_350_R1_Proof_hi.pdf}
 
 \subsection{Performance of length-based data-limited methods in a multi-fleet context}
-%\includepdf[pages=-,pagecommand={},width=\textwidth]{../papers/catchLength/12553688_File000007_240052393.pdf}
-
+\includepdf[pages=-,pagecommand={},width=\textwidth]{include/12553688_File000007_240052393.pdf}
 
 \subsubsection{ROC}
-%\includepdf[pages=1,pagecommand={},width=\textwidth]{../papers/roc/tex/roc.pdf}
+\includepdf[pages=1,pagecommand={},width=\textwidth]{include/roc.pdf}
 
 \subsubsection{Pareto}
-%\includepdf[pages=1,pagecommand={},width=\textwidth]{../papers/pareto/tex/pareto.pdf}
-
-\subsubsection{FLife}
-%\includepdf[pages=1,pagecommand={},width=\textwidth]{../papers/flife/tex/FLife.pdf}
+\includepdf[pages=1,pagecommand={},width=\textwidth]{include/pareto.pdf}
 
 \end{appendices}
 
-
 \end{document}
 
-\begin{figure}[h!]\centering\includegraphics[width=6in]{/home/laurence/Desktop/sea++/mydas/final/report/figs/2-pollack-unnamed-chunk-8-1.png}\caption{Summary of potential study stocks.}\label{fig:proxies}
-\end{figure}
 
-
-\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/presentations.html}{presentations)
-\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/1/stockprioritisation.nb.html}{prioritisation)
-\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/1/stocks.html}{stocks)
-\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/brill.html}{brill)
-\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/lobster.html}{lobster)
-\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/pollack.html}{pollack)
-\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/ray.html}{ray)
-\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/razor.html}{razor)
-\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/sprat.html}{sprat)
-\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/turbot.html}{turbot))
-\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks.html}{tasks)
+%\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/presentations.html}{presentations)
+%\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/1/stockprioritisation.nb.html}{prioritisation)
+%\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/1/stocks.html}{stocks)
+%\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/brill.html}{brill)
+%\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/lobster.html}{lobster)
+%\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/pollack.html}{pollack)
+%\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/ray.html}{ray)
+%\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/razor.html}{razor)
+%\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/sprat.html}{sprat)
+%\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/turbot.html}{turbot))
+%\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks.html}{tasks)
  
 
+ln /home/laurence-kell/Desktop/projects/mydas/tasks/2/Databasedescripton.pdf /home/laurence-kell/Desktop/projects/mydas/report/include/Databasedescripton.pdf
+ln /home/laurence-kell/Desktop/projects/mydas/tasks/2/dataSmry.pdf           /home/laurence-kell/Desktop/projects/mydas/report/include/dataSmry.pdf
+ln /home/laurence-kell/Desktop/projects/mydas/papers/length/ICESJMS-2018-485.R1_Proof_hi.pdf /home/laurence-kell/Desktop/projects/mydas/report/include/ICESJMS_2019_350_R1_Proof_hi.pdf
+ln /home/laurence-kell/Desktop/projects/mydas/papers/catchLen/12553688_File000007_240052393.pdf /home/laurence-kell/Desktop/projects/mydas/report/include/12553688_File000007_240052393.pdf
+ln /home/laurence-kell/Desktop/projects/mydas/papers/roc/roc.pdf /home/laurence-kell/Desktop/projects/mydas/report/include/roc.pdf
+ln /home/laurence-kell/Desktop/projects/mydas/papers/pareto/pareto.pdf /home/laurence-kell/Desktop/projects/mydas/report/include/pareto.pdf

@@ -1,0 +1,23 @@
+\textit{\textbf{Method and simulation framework development and implementation A number of data-limited methods exist. In order to compare the performance of these methods it would be useful to implement them all in the same framework, e.g. R. New methods may also be developed in the same framework.}}
+
+All methods will be implemented in R and be compatible with The Fishery Library in R (\textbf{FLR}) \citep{kell2007flr}, a project that has for the last ten years been building an extensible toolset of statistical and simulation methods for quantitative fisheries science, with the overarching objective of enabling fisheries scientists to carry out analyses of management procedures in a simplified and robust manner through the MSE approach.
+
+\textbf{FLR} has become widely used in many of scientific bodies providing fisheries management advice, both in Europe and elsewhere. The evaluation of the effects of elements of the revised CFP, the analysis of the proposed fisheries management plans for the North Sea, or the comparison of management strategies for Atlantic tuna stocks, among others, have used the \textbf{FLR} tools to advice managers of the possible courses of action to favour the sustainable use of many marine fish stocks.
+
+The \textbf{FLR} toolset is currently composed of a variety of packages, covering the various steps in the fisheries advice and simulation workflow. They include a large number of S4 classes, and more recently Reference Classes, to model the data structures that represent each of the elements in the fisheries system. Class inheritance and method overloading are essential tools that have allowed the \textbf{FLR} packages to interact, complement and enrich each other, while still limiting the number of functions an user needs to be aware of. Methods also exist that make use of R's parallelization facilities and of compiled code to deal with complex computations.
+
+Using \textbf{FLR} means that advantage can be taken of existing methods, and that dissemination and support is easier and will be maintained after the life of the project. Under the project development will be on mainly on four packages \textbf{FLife}, \textbf{mpb}, \textbf{hcr} and \textbf{oem}. In addition new methods will be added to other \textbf{FLR} packages as appropriate. 
+
+\textbf{FLife} is a package for modelling life history relationships, e.g. for developing priors, estimating quantities such a Z from length data, deriving reference points and indicators and for creating OMs.
+
+\textbf{mpb} is a package for modelling biomass dynamic based management procedures, it has also been used to assess a variety of stocks, e.g. Atlantic bigeye and North Atlantic albacore and swordfish. It also forms the basis of the North Atlantic albacore MP evaulated using MSE.
+
+\textbf{hcr} will be a new package that will include a variety of emprirical HCRs, e.g. those used by CCSBT, proposed by ICES and from a review of the literature \cite[e.g.][]{pomarede2010evaluating}.
+
+\textbf{oem} will be a new package that implements a variety of observation error models, that will be used to simulate a variety of datasets from OMs that will be used by the data poor methods.
+
+In addition Dr Kell is the developer of two packages that are used to provide a common set of diagnostics across stock assessment methods (\textbf{diags}) and to summarise stock status relative to reference points and for summarising the results from MSE (\textbf{kobe})
+
+There are a variety of R packages, that already implement a variety of data poor methods, e.g. https://github.com/quang-huynh/MLZ, https://github.com/AdrianHordyk/LBSPR https://github.com/cran/DLMtool, wherevever possible these packages will be used and we will collaborate with their developers.
+
+

@@ -1,0 +1,51 @@
+\newpage
+\section{Peer Review Papers}
+
+The lack of data to conduct fully quantitative stock assessments, and hence provide management advice based on target and limit reference points, is a worldwide problem as the majority of fish stocks are data-limited. MyDas therefore collaborated with others who are working on data poor frameworks. This resulted in three peer review manuscripts that evaluated length based methods \citep{pons2019performance}, compared length and catch based methods \citep{pons2019catchlen} and conducting MSE for the ICES catch rule for data poor stocks\citep{fischer2019hcr}
+.
+
+The papers on length and catch based methods addressed \textbf{Task 3: Method Performance Appraisal} which required the development of set of diagnostics that can be applied across range of models, and to assess their robustness. They reviewed the main data poor methods currently used worldwide and then used simulation to compare their performance.
+Initially a \href{https://docs.google.com/spreadsheets/d/17_qQdzDY41ZrL0yT6QtHpUR4_ydxx_xfCh4GiDqYymU/edit?usp=sharing}{google spreadsheets} was compiled with a summary of the various methods, their knowledge and data requirements, quantities estimated, and where available links to code repositories. 
+
+
+\subsection{ICES Catch Rule}
+
+Within ICES, such data-limited stocks are currently managed by setting total allowable catches without the use of target reference points. To ensure that such advice is precautionary, we used Management Strategy Evaluation to evaluate an empirical rule that bases catch advice on recent catches, information from a biomass survey index, catch length frequencies and MSY reference point proxies. Twenty-nine fish stocks were simulated covering a wide range of life-histories. The performance of the rule varied substantially between stocks, and the risk of breaching limit reference points was inversely correlated to the von Bertalanffy growth parameter k. Stocks with k>0.32 had a high probability of stock collapse. A time-series cluster analysis revealed four types of dynamics, i.e. groups with similar stock trajectories (collapse, BMSY, 2BMSY, 3BMSY). It was shown that a single generic catch rule cannot be applied across all life-histories, and management should instead be linked to life-history traits, and in particular, the nature of the time series. The lessons learnt can help future work to shape scientific research into data-limited fisheries management and to ensure fisheries are MSY-compliant and precautionary.
+
+The manuscript describes the use of Management Strategy Evaluation to test the empirical catch rule for data-limited fish stocks that is being reccommended by ICES. Using a novel approach based on life history theory we  show that the performance of the rule depends crucially on the life-history of the stocks and a single generic catch rule should not be applied for all stocks. The work is important worldwide and within the ICES community because the majority of fish stocks are data-limited but still need to be managed according to the Precautionary Approach. To date, ICES advice for data-limited fish stocks is to manage these using simple rules that aim to maintain the status quo but without targets this therefore can be seen only as an interim solution. Our research  addresses this issue; and has implications for current fisheries management as well as showing directions in which future research on improving data-limited fisheries management can focus.
+The main concern raised in the initial rejection was that all stocks were simulated with a constant recruitment steepness. This was done since in empirical data, relationships between steepness and life-history parameters are scarce and notoriously difficult to estimate. This is particularly true for data-limited stocks for which usually assessment or data exists on which to base estimates of steepness. In order to test the sensitivity of our results to the recruitment assumptions we therefore conducted additional simulations (detailed and discussed in the supplementary materials) where we (1) tested different levels of steepness values, (2) imposed relationships between steepness and life-history parameters, (3) borrowed species-specific steepness estimates from a previous study and (4) tested the impact of recruitment variability. 
+The main outcome of these additional simulations is that for stocks with von Bertalanffy growth parameter k≤0.32, the recruitment assumptions have a minor impact on the results. For stocks with k>0.32, steepness can under certain conditions change the outcome, e.g. when steepness is low, in some cases stock collapse is delayed or avoided. Nevertheless, this only introduces additional uncertainty for the higher k stocks for which we recommend that this catch rule should not be adopted. Therefore, we believe our results and conclusions are robust to recruitment assumptions.
+The other concern was that our results showed that the catch rule performed poorly for the more productive stocks (those with higher ) compared to the less productive stocks (with lower ) at first glance appear counter-intuitive. The performance of the catch rule, however, is an emergent property of the interaction between the operating model and the catch rule. Therefore this is an important results which would not have been apparent without the work of our manuscript.
+The advised catch was mainly influenced by one component of the rule (the trend in the relative index of abundance) and biomass trends for stocks with higher  are inherently more variable, which in turn leads to higher fluctuations in catch. Therefore when managed by the ICES catch rule, the stocks with higher  were more likely to collapse during simulation. This behaviour can be attributed to an initial rapid recovery, which resulted in an increase in catch. Once the stocks started to decline again, however, catch was not reduced quickly enough to avoid stock collapse. This undesirable feature is caused by the design of the catch rule, which bases the newly advised catch on the previous catch and observed data with a time-lag. Since the less productive stocks (those with low ) were also less variable, the catch rule was sufficiently reactive to avoid stock collapse.
+
+\begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+ \item \textbf{Achievements}
+ \item \textbf{Promises \& Differences}
+ \item \textbf{What \& Why}
+\end{itemize}
+
+\subsection{Indicators}
+\begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+ \item \textbf{Achievements}
+ \item \textbf{Promises \& Differences}
+ \item \textbf{What \& Why}
+\end{itemize}
+
+\subsection{Trade-offs}
+\begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+ \item \textbf{Achievements}
+ \item \textbf{Promises \& Differences}
+ \item \textbf{What \& Why}
+\end{itemize}
+
+\subsection{Life History}
+\begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+ \item \textbf{Achievements}
+ \item \textbf{Promises \& Differences}
+ \item \textbf{What \& Why}
+\end{itemize}
+
+\newpage\clearpage
+\bibliography{mydas.bib}
+\bibliographystyle{abbrvnat}
+%\input{mse-proposal.bbl}

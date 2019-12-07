@@ -1,0 +1,375 @@
+% $Id: $
+\documentclass[a4paper, 10pt]{article}
+% reduced margins
+\usepackage{fullpage}
+\usepackage[authoryear]{natbib}
+% spacing
+\usepackage{setspace}
+% page headings
+\usepackage{fancyhdr}
+%\usepackage{lscape}
+
+%\usepackage[nomain,acronym,xindy,toc]{glossaries} % nomain, if you define glossaries in a file, and you use \include{INP-00-glossary}
+%\makeglossaries
+
+\usepackage[margin=1.0in]{geometry}
+\usepackage{url, subeqn, multirow}
+\usepackage{booktabs}
+\usepackage{enumerate}
+
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+
+\usepackage{lscape}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{url}
+\hypersetup{colorlinks, urlcolor=darkblue}
+\usepackage{pdfpages}
+
+\usepackage{lscape}
+% figs to be 75% of test width
+\setkeys{Gin}{width=0.75\textwidth}
+
+\usepackage{color}
+\newcommand{\laurie}{\textcolor{blue}}
+\newcommand{\coilin}{\textcolor{green}}
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true,    % Colours links instead of ugly boxes
+  urlcolor     = blue,    % Colour for external hyperlinks
+  linkcolor    = blue,    % Colour of internal links
+  citecolor    = red      % Colour of citations
+}
+
+\usepackage[obeyspaces]{url}
+%\PassOptionsToPackage{obeyspaces}{url}
+
+\usepackage{enumitem}
+\usepackage[titletoc]{appendix}
+
+\title{Supply of Research Services to establish MSY proxies for data-limited stocks (2017-18) to the Marine Institute, Rinville, Oranmore, Co. Galway.
+(Ref: ITT17-015)}
+
+\author{Laurence Kell, C\'oil\'in Minto}
+\date{\today}
+
+\pdfinfo{%
+ /Title (MSY reference points for data-limited stocks)
+ /Author (Laurence Kell)
+ /Creator ()
+ /Producer ()
+ /Subject ()
+ /Keywords ()
+}
+
+
+%
+\renewcommand{\abstractname}{\large SUMMARY}
+%
+\newcommand{\Keywords}[1]{\begin{center}\par\noindent{{\em KEYWORDS\/}: #1}\end{center}}
+%
+\makeatletter
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}%
+ {-1.25ex\@plus -1ex \@minus -.2ex}%
+ {1.5ex \@plus .2ex}%
+ {\normalfont\slshape}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
+ {-3.25ex\@plus -1ex \@minus -.2ex}%
+ {1.5ex \@plus .2ex}%
+ {\normalfont\bfseries\slshape}}
+\renewcommand{\section}{\@startsection{section}{1}{\z@}%
+ {-5.25ex\@plus -1ex \@minus -.2ex}%
+ {1.5ex \@plus .2ex}%
+ {\normalfont\bfseries}}
+\makeatother
+%
+\renewcommand\thesection{\arabic{section}.}
+\renewcommand\thesubsection{\thesection\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection\arabic{subsubsection}}
+%
+\renewcommand{\headrulewidth}{0pt}
+
+\usepackage{listings}
+
+\newenvironment{mylisting}
+{\begin{list}{}{\setlength{\leftmargin}{1em}}\item\scriptsize\bfseries}
+{\end{list}}
+
+\newenvironment{mytinylisting}
+{\begin{list}{}{\setlength{\leftmargin}{1em}}\item\tiny\bfseries}
+{\end{list}}
+
+\usepackage{listings}
+
+\definecolor{darkblue}{rgb}{0,0,0.5}
+\definecolor{shadecolor}{rgb}{1,1,0.95}
+\definecolor{shade}{rgb}{1,1,0.95}
+
+
+\lstset{ %
+language=R, % the language of the code
+basicstyle=\footnotesize, % the size of the fonts that are used for the code
+numbers=left, % where to put the line-numbers
+numberstyle=\footnotesize, % the size of the fonts that are used for the line-numbers
+stepnumber=1	00, % the step between two line-numbers. If it's 1, each line 
+ % will be numbered
+numbersep=5pt, % how far the line-numbers are from the code
+backgroundcolor=\color{shade}, % choose the background color. You must add \usepackage{color}
+showspaces=false, % show spaces adding particular underscores
+showstringspaces=false, % underline spaces within strings
+showtabs=false, % show tabs within strings adding particular underscores
+frame=single, % adds a frame around the code
+tabsize=2, % sets default tabsize to 2 spaces
+captionpos=b, % sets the caption-position to bottom
+breaklines=true, % sets automatic line breaking
+breakatwhitespace=false, % sets if automatic breaks should only happen at whitespace
+title=\lstname, % show the filename of files included with \lstinputlisting;
+ % also try caption instead of title
+escapeinside={\%*}{*)}, % if you want to add a comment within your code
+morekeywords={*,...} % if you want to add more keywords to the set
+}
+
+
+\begin{document}
+
+\onehalfspacing
+\lhead{\normalsize\textsf{MyDas- Ref: ITT17-015}}
+\rhead{}
+
+\maketitle
+% gets headers on title page ...
+\thispagestyle{fancy}
+% ... but not on others
+\pagestyle{empty}
+
+%
+
+\onehalfspacing
+\lhead{\normalsize\textsf{MyDas - Final Report}}
+\rhead{}
+
+\maketitle
+% gets headers on title page ...
+\thispagestyle{fancy}
+% ... but not on others
+\pagestyle{empty}
+
+\maketitle
+
+\begin{abstract}
+
+This report summarises the main outcomes of MyDas with respect to the main task, which were i) Stock prioritisation, ii) Data Collation, iii) Framework Development; iv) Performance Appraisal, v) Reference Point Comparison, vi) Liaison with Marine Institute, and vii) Linkage with other Projects.
+
+Initially a number of stocks were proposed and fisheries dependent and independent data and history characteristics collated.  After discussion with the Marine Institute (MI) these were narrowed down to seven stocks based on economic and ecological importance, i.e. sprat, brill, turbot, pollack, ray, razor clams and lobster. 
+
+A variety of data-poor stock assessment models, based on length and catch only methods, were  implemented in R and compared using simlation testing. The best performing methods identified and a Managemet Strategy Evaluation framework developed to allow the performance of the methods to be compared. 
+
+Two main products of the project are the mydas and FLife R packages for simulation testing, these packages also include a number of vignettes with examples. The framework was tested at an MI workshop and results presented at the ICES Workshop On The Development Of Quantitative Assessment Methodologies Based On Life-History Traits, Exploitation Characteristics, And Other Relevant Parameters For Data-Limited Stocks (WKLIFE).
+
+The main outcomes were i) R packages with documentation, ii)  vignettes with reproducible examples, iii) peer review papers, and iv) management proceedures for data poor stocks.
+
+
+\end{abstract}
+\newpage
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+%\input{include/intro.tex}
+
+\section{Task Summary}
+%\input{include/tasks.tex}
+
+\subsection{Stock Prioritisation}
+%\textit{\textbf{A number of example stocks were initially identified, and  the final list of stocks was prioritised using criteria like: economic value of the stock; importance of the species to the ecosystem (key-stone species); sensitivity to the impacts of fishing; available data.}}
+
+\begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+ \item \textbf{Objective} A number of potential stocks were identified at the start of the project from which the final choice of case studies were selected based on economic value; importance of the species to the ecosystem (i.e. key-stone species); sensitivity to the impacts of fishing; and availablity of data.
+ \item \textbf{Outcome} The final case studies chosen were sprat, brill, turbot, thornback ray, pollack, lobster, and razor clams, and reflect a range of valuable stocks, ecological roles and \hyperref[fig:stocks]{life histories}.
+\end{itemize}
+
+\subsection{Data collation}\label{data}
+
+\begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+ \item \textbf{Objective} Data collation ran in parallel with other tasks, and relied on existing data sets which were either available from the Marine Institute, other European labs/agencies or publicly available. 
+ \begin{itemize} \item The main datasets were fishery independent surveys, commercial catches, stock assessment inputs and outputs and life history parameters.
+ \end{itemize}
+ \item \textbf{Outcome} The data were collated into a PostgreSQL \hyperref[appendix:db]{database} and  \hyperref[appendix:datsets]{R code} was developed for processing. 
+ \begin{itemize}
+    \item At the end of the project the data were archived on \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/db.html}{google drive}.
+ \end{itemize}
+\end{itemize}
+
+
+\subsection{Assessment Methods}
+
+\begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+ \item \textbf{Objective} A number of data limited methods already exist, in order to allow them to be simulation tested and their performance compared they were implemented within a common R framework.    
+ \item \textbf{Outcome} Five catch-only and three length-only assessment methods were compared, allowing the best performing methods were identified.  
+ \begin{itemize}
+  \item Two peer review papers were produced that evaluated length based methods \citep{pons2019performance} and compared length and catch based methods \citep{pons2019catchlen}.
+ \item  The best performing methods were Length Based Spawning Potential Ratio \citep[LBSPR][]{hordyk2014novel} and Depletion Based  Stock Reduction Analysis \citep[DBSRA][]{dick2011depletion}. These were implemented as part of the mydas package, see \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/4/simtest-lbspr.html}{lbspr} and
+ \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/4/simtest-bdsra.html}{bdsra}.
+ \end{itemize}
+\end{itemize}
+
+\subsection{Performance Appraisal}
+ 
+\begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+ \item \textbf{Objective} Method performance appraisal was based on the develop of a set of diagnostics that can be applied across a range of models to assess the stability of the model, sensitivity to assumptions and bias.
+ 
+ \item \textbf{Outcome} A simulation framework based on R was developed using \href{http://www.flr-project.org/}{FLR} a collection of tools for quantitative fisheries science, developed in the R language, that facilitates the construction of simulation models of fisheries systems. Two R packages were developed, \href{https://github.com/flr/flife}{FLife} which uses life history theory to build simulation models and 
+    \href{https://github.com/flr/mydas/wiki}{mydas} 
+    which provides an interface to the data poor methods. A variety of \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes.html}{vignettes} document the approach and provide worked examples. 
+    \begin{itemize}
+   \item Operating Models conditioned on life history theory were developed for each of the 
+    \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/om.html}{case studies}.
+    \item An \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/oem.html}{Observation Error Model} was developed also developed to simulate psuedo data under a range of assumptions to allow the bias and sensitivity of stock estimates and reference points to be estimated.    
+    \item Vignettes include examples of conducting \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/mse.html}{MSE} and the use of \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/parallel.html}{parallel computing}, estimation of
+    \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/proxies.html}{proxy reference points} and calculation of \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/performance.html}{performance metrics},  \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/turbot.html}{OM conditioning} and simulation testing \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/length.html}{length} and 
+   \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/sra.html}{catch} based methods.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Simulation}
+
+\begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+ \item \textbf{Objective} Once reference points are identified, their performance was evaluated through simple Management Strategy Evaluations.
+ \item \textbf{Outcome} 
+ \begin{itemize}
+ \item Simulation testing was conducted for the ICES control rule using the FLife package for data limited stocks \citep{fischer2019hcr}.
+ \item A comparison of \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/papers/roc/roc.html}{length based indicators} was conducted and a peer review paper is currently in preparation.
+ \item An \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/papers/pareto/pareto.html}{emprical control rule} was simulation tested using MSE, and a peer review paper is in preparation.
+  \end{itemize} 
+\end{itemize}
+
+
+\subsection{Liason}
+
+\begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+ \item \textbf{Objective} Meetings on a regular basis with the MI.
+ \item \textbf{Outcome} 
+ Meetings at the Marine Institute ensured that the over-arching goals of the project were achieved.
+ \begin{itemize}
+  \item  Regular \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/presentations.html}{presentations} were made at the MI and a Workshop was held where the methods were tested.
+ \item In addition to ensure good communication between the consortum and the Marine Instiutute and that the project keeps focus and delivers as well as the scheduled meetings code, data and results were made available on the cloud and in a github repository during the life of the project.
+ \end{itemize}
+\end{itemize}
+
+
+\subsection{Linkage}
+
+\begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+ \item \textbf{Objective} Link with other projects
+ \item \textbf{Outcome}
+  \begin{itemize} 
+  \item The MyDas framework was developed though case studies in collaboration with the MI.
+  \item Attendance at Workshop on the Development of Quantitative Assessment Methodologies based on LIFE-history traits, exploitation characteristics, and other relevant parameters for data-limited stocks \href{https://www.ices.dk/community/groups/Pages/WKLIFEIX.aspx}{(WKLIFE)} and the Working Group for the Celtic Seas Ecoregion \href{https://www.ices.dk/community/groups/Pages/WGCSE.aspx}{(WGCSE)}, see presentations 
+  \begin{itemize}
+   \item \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/presentations/mydas-wklifeix.html}{WKLIFE VIII}
+   \item \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/presentations/mydas-wklifeviii.html}{WKLIFE IX}
+ \end{itemize}
+ \end{itemize}
+\end{itemize}
+
+
+\newpage\section{Case Studies}
+\input{include/task1.tex} 
+
+\newpage\section{Data Collation}
+\input{include/task2.tex}
+
+\newpage\section{Assessment Methods}
+\input{include/task3.tex}
+
+\newpage\section{Framework}
+\input{include/task4.tex} 
+
+\newpage\section{Simulations}
+%\input{include/task5.tex}
+
+\newpage\section{Liason and Linkage}
+%\input{include/task6.tex}
+%\input{include/task7.tex}
+
+
+%\includegraphics{/home/laurence/Desktop/sea++/mydas/final/report/figs/1-pairwise-1.png}
+%\includegraphics{/home/laurence/Desktop/sea++/mydas/final/report/figs/Figure_1.png}
+%\includegraphics{/home/laurence/Desktop/sea++/mydas/final/report/figs/2-turbot-unnamed-chunk-8-1.png}
+%\includegraphics{/home/laurence/Desktop/sea++/mydas/final/papers/roc/tex/lib.png}
+%\includegraphics{/home/laurence/Desktop/sea++/mydas/final/papers/roc/tex/roc-inds-1.png}
+%\includegraphics{/home/laurence/Desktop/sea++/mydas/final/papers/roc/tex/roc-finallfds-1.png}
+%\includegraphics{/home/laurence/Desktop/sea++/mydas/final/papers/roc/tex/roc-finalunnamed-chunk-2-1.png}
+%\includegraphics{/home/laurence/Desktop/sea++/mydas/final/papers/roc/tex/roc-ts-1.png}
+
+
+\newpage\clearpage
+\bibliography{/home/laurence/Desktop/sea++/mydas/final/report/mydas.bib}
+\bibliographystyle{abbrvnat}
+%%input{mydas.bbl}
+
+\flushbottom
+\newpage
+
+%% APPENDICES
+\newpage
+
+
+\begin{appendices}
+
+
+\newpage\section{}
+
+\subsection{Database}\label{appendix:db}
+
+\includepdf[pages=1-5,pagecommand={},width=\textwidth]{include/Databasedescripton.pdf}
+
+\subsection{Dataset Summary}\label{appendix:datsets}
+
+\includepdf[pages=-,pagecommand={},width=\textwidth]{/home/laurence/Desktop/sea++/mydas/final/tasks/2/dataSmry.pdf}
+
+\section{Peer Review Papers}
+
+\subsection{Linking the performance of a data-limited empirical catch rule to life-history traits}
+%\includepdf[pages=-,pagecommand={},width=\textwidth]{../papers/empricalRule/ICESJMS_2019_350_R1_Proof_hi.pdf}
+
+\subsection{Performance of length-based data-limited methods in a multi-fleet context}
+%\includepdf[pages=-,pagecommand={},width=\textwidth]{../papers/catchLength/12553688_File000007_240052393.pdf}
+
+
+\subsubsection{ROC}
+%\includepdf[pages=1,pagecommand={},width=\textwidth]{../papers/roc/tex/roc.pdf}
+
+\subsubsection{Pareto}
+%\includepdf[pages=1,pagecommand={},width=\textwidth]{../papers/pareto/tex/pareto.pdf}
+
+\subsubsection{FLife}
+%\includepdf[pages=1,pagecommand={},width=\textwidth]{../papers/flife/tex/FLife.pdf}
+
+\end{appendices}
+
+
+\end{document}
+
+\begin{figure}[h!]\centering\includegraphics[width=6in]{/home/laurence/Desktop/sea++/mydas/final/report/figs/2-pollack-unnamed-chunk-8-1.png}\caption{Summary of potential study stocks.}\label{fig:proxies}
+\end{figure}
+
+
+\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/presentations.html}{presentations)
+\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/1/stockprioritisation.nb.html}{prioritisation)
+\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/1/stocks.html}{stocks)
+\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/brill.html}{brill)
+\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/lobster.html}{lobster)
+\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/pollack.html}{pollack)
+\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/ray.html}{ray)
+\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/razor.html}{razor)
+\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/sprat.html}{sprat)
+\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/2/turbot.html}{turbot))
+\href[y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks.html}{tasks)
+ 
+

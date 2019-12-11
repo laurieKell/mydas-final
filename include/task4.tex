@@ -2,10 +2,9 @@ The majority of fish stocks worldwide lack sufficient data on which to base quan
 
 A reason for the use of MSE is because it is recognised that the robustness of advice depends on the combination of data, estimation method, choice of reference points as well as the rules used to set management action, i.e. the Management Procedure (MP). When conducting MSE an Operating Model (OM) is used to represents the dynamics of system being managed, and control actions from an MP are fed back into the OM so that its influence on the stock and hence on future fisheries data is propagated through the stock and fishery dynamics. Conducting MSE requires six steps; namely i) identification of management objectives; ii) selection of hypotheses for the OM; iii) conditioning the OM based on data and knowledge, and possible weighting and rejection of hypotheses; iv) identifying candidate management strategies; v) running the Management Procedure (MP) as a feedback control in order to simulate the long-term impact of management; and then vi) identifying the MPs that robustly meet management objectives. 
 
-Data limited methods were interfaced to R using the Fishery Library in R \citep[\href{http://www.flr-project.org/}{FLR}][]{kell2007flr}, which comprises a variety of packages that cover the various steps in the fisheries advice and simulation workflow. Using \textbf{FLR} means that advantage can be taken of existing methods, and that dissemination and support is easier and will be maintained after the life of the project. Under MyDas development focused on two main packages \textbf{FLife} and \textbf{mydas}. \textbf{FLife} is a package for modelling life history relationships and \textbf{mydas} provides a set of tools for simulation and conducting Management Strategy Evaluation (MSE) by providing wrappers for the various assessment methods, implementing Observation Error Models (OEMs) to simulate emprical indicators and other datasets, and to model harvest control rules (HCRs).
+The MSE framework was based on the Fishery Library in R \citep[\href{http://www.flr-project.org/}{FLR}][]{kell2007flr}, which comprises a variety of packages that cover the various steps in the fisheries advice and simulation workflow. Using \textbf{FLR} means that advantage can be taken of existing methods, and that dissemination and support is easier and will be maintained after the life of the project. Under MyDas development focused on two main packages \textbf{FLife} and \textbf{mydas}. \textbf{FLife} is a package for modelling life history relationships and \textbf{mydas} provides a set of tools for simulation and conducting Management Strategy Evaluation (MSE) by providing wrappers for the various assessment methods, implementing Observation Error Models (OEMs) to simulate emprical indicators and other datasets, and to model harvest control rules (HCRs).
 
 \textbf{FLife} was used to  condition OMs based on life history relationships and ecological theory, MP were then implemented using \textbf{mydas}. The link between the OM and the MP is the \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/oem.html}{OEM}, which generates fishery-dependent or independent resource monitoring data. The OEM models the uncertainties due to sampling and limited data and so mimics the types of data currently required for each assessment method. In addition the types of a data that could be made available in the future,
-
 
 Simulation tests were also performed without feedback where the OEM was used to generate datasets from the OM. This allows the performance of the candidate methods to be compared, since if there is little correlation between the estimates of reference points and status from a candidate method and the OM then there is little point in running that method in the MSE. Tests were performed for 
 
@@ -15,8 +14,7 @@ Simulation tests were also performed without feedback where the OEM was used to 
 
 \subsubsection*{Performance measures} 
 
-Management objectives include (e.g. under the %\href{Marine Directive}(http://ec.europa.eu/environment/marine/good-environmental-status/descriptor-3/index_en.htm)
-of the European Union) that stocks should be exploited sustainably consistent with high long-term yields, have full reproductive capacity in order to maintain stock biomass and that the proportion of older and larger individuals should be maintained (or increased) as they are indicators of a healthy stock
+Management objectives include (e.g. under the \href{Marine Directive}(http://ec.europa.eu/environment/marine/good-environmental-status/descriptor-3/index_en.htm) of the European Union) that stocks should be exploited sustainably consistent with high long-term yields, have full reproductive capacity in order to maintain stock biomass and that the proportion of older and larger individuals should be maintained (or increased) as they are indicators of a healthy stock
 
 These general objectives can be mapped to performance measures, so that alternative management strategies can be compared. For example
 
@@ -28,12 +26,9 @@ These general objectives can be mapped to performance measures, so that alternat
 \end{description}
 
 
-\subsection{Proxy Reference Points}
-
 A range of summary statistics will be required to illustrate trade-offs between multiple potentially conflicting objectives. Although there are many potential summary statistics so that decision makers can choose between tangible options on the basis of actual projections rather than abstract concepts and performance statistics, however, should ideally be few, informative and based axes such as ‘stock status’, 'safety', 'stability' and 'yield'. It is also necessary to distinguish between techincal summary statistics (i.e. those required to evaluate model fits and performance) and those required to evaluate management objectives.
 
 
-. 
 %The assessment methods chosen for testing, reflect a range of data and knowledge requirements, these were [LBSPR](https://cran.r-project.org/web/packages/LBSPR/index.html) for length compostion data, [MLZ](https://github.com/cran/MLZ) for mean size, [mpb](http://www.flr-project.org/) a biomass dynamic model for catch and survey data and catch only.
 
 %\subsubsection*{Knowledge requirements}

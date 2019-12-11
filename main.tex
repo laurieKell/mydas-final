@@ -34,7 +34,6 @@
 \newcommand{\laurie}{\textcolor{blue}}
 \newcommand{\coilin}{\textcolor{green}}
 
-
 \usepackage{url}
 \usepackage{hyperref}
 \hypersetup{
@@ -161,14 +160,13 @@ morekeywords={*,...} % if you want to add more keywords to the set
 
 \begin{abstract}
 
-This report summarises the main activities and outcomes of MyDas with respect to the tasks, namely i) Stock prioritisation, ii) Data Collation, iii) Framework Development; iv) Performance Appraisal, v) Reference Point Comparison, vi) Liaison with Marine Institute, and vii) Linkage with other Projects.
+This report summarises the main activities and outcomes of MyDas with respect to the tasks namely i) Stock prioritisation, ii) Data Collation, iii) Framework Development; iv) Performance Appraisal, v) Reference Point Comparison, vi) Liaison and vii) Linkage with other Projects.
 
-The main outcomes were i) R packages with documentation, ii)  vignettes with reproducible examples, iii) peer review papers, and iv) example management proceedures for data poor stocks.
+The main outcomes were i) R packages with documentation, ii)  vignettes with reproducible examples, iii) peer review papers, and iv) evaluations of Management proceedures for data poor stocks.
 
-Initially a number of stocks were proposed as potential case studies and fisheries dependent and independent data and life history characteristics were collated.  After discussion with the Marine Institute (MI) seven case study stocks, i.e. sprat, brill, turbot, pollack, ray, razor clams and lobster, were selected, based on economic and ecological importance.
+Initially a number of stocks were proposed as potential case studies and then fisheries dependent and independent data and life history characteristics were collated.  After discussion with the Marine Institute (MI) seven case study stocks, i.e. sprat, brill, turbot, pollack, ray, razor clams and lobster, were selected, based on ecological and economic importance.
 
-Data-poor stock assessment models, based on length and catch, in use worldwide were reviewed and simulation tested. The best performing methods were identified implemented in a Management Strategy Evaluation framework. Two R packages, mydas and FLife, were developed for simulating stocks based on life history theory and testing data poor harvest control rules, and vignettes with examples were developed. The framework was tested at an MI workshop and results presented at the ICES Workshop On The Development Of Quantitative Assessment Methodologies Based On Life-History Traits, Exploitation Characteristics, And Other Relevant Parameters For Data-Limited Stocks (WKLIFE).
-
+Data-poor stock assessment models in use worldwide were reviewed and simulation tested. The best performing methods were identified and then implemented in a Management Strategy Evaluation framework based on R. Two R packages were developed \textbf{FLife} for simulating stocks based on life history theory and \textbf{mydas} for running and testing data poor harvest control rules. The packagwes include a number of vignettes with examples. The framework was tested at an MI workshop and results presented at the ICES Workshop On The Development Of Quantitative Assessment Methodologies Based On Life-History Traits, Exploitation Characteristics, And Other Relevant Parameters For Data-Limited Stocks (WKLIFE).
 
 \end{abstract}
 
@@ -177,10 +175,10 @@ Data-poor stock assessment models, based on length and catch, in use worldwide w
 
 \newpage
 \section{Introduction}
-\input{include/intro.tex}
+\input{include/intro.tex}  
 
 \section{Tasks}
-There were seven tasks namely: i) Stock prioritisation, ii) Data Collation, iii) Framework Development; iv) Performance Appraisal, v) Reference Point Comparison, vi) Liaison with Marine Institute, and vii) Linkage with other Projects. 
+There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Framework Development; iv) Performance Appraisal, v) Reference Point Comparison, vi) Liaison with Marine Institute, and vii) Linkage with other Projects. Here we summarise the main activities and outcomes, and provide links to appropriate reports and cloud based resources.
 
 \subsection{Stock Prioritisation}
 %\textit{\textbf{A number of example stocks were initially identified, and  the final list of stocks was prioritised using criteria like: economic value of the stock; importance of the species to the ecosystem (key-stone species); sensitivity to the impacts of fishing; available data.}}
@@ -197,7 +195,7 @@ There were seven tasks namely: i) Stock prioritisation, ii) Data Collation, iii)
  \item \textbf{Objective} Data collation ran in parallel with other tasks, and relied on existing data sets which were either available from the Marine Institute, other European labs/agencies or publicly available. 
  \begin{itemize} \item The main datasets were fishery independent surveys, commercial catches, stock assessment inputs and outputs and life history parameters.
  \end{itemize}
- \item \textbf{Outcome} The data were collated into a PostgreSQL \hyperref[appendix:db]{database} and  \hyperref[appendix:datsets]{R code} was developed for processing. 
+ \item \textbf{Outcome} The data were collated into a PostgreSQL \hyperref[appendix:db]{database} and  \hyperref[appendix:datsets]{R code} developed for processing. 
  \begin{itemize}
     \item At the end of the project the data were archived on \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/db.html}{google drive}.
  \end{itemize}
@@ -207,11 +205,11 @@ There were seven tasks namely: i) Stock prioritisation, ii) Data Collation, iii)
 
 \begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
  \item \textbf{Objective} A number of data limited methods already exist, in order to allow them to be simulation tested and their performance compared they were implemented within a common R framework.    
- \item \textbf{Outcome} Data limited methods in use worldwide were summarised in a \href{https://docs.google.com/spreadsheets/d/17_qQdzDY41ZrL0yT6QtHpUR4_ydxx_xfCh4GiDqYymU/edit?usp=sharing}{google spreadsheet}. Following a review five catch-only and three length-only assessment methods were then compared, allowing the best performing methods to be identified.  
+ \item \textbf{Outcome} Data limited methods in use worldwide were summarised in a \href{https://docs.google.com/spreadsheets/d/17_qQdzDY41ZrL0yT6QtHpUR4_ydxx_xfCh4GiDqYymU/edit?usp=sharing}{google spreadsheet}. Following a review five catch-only and three length-only assessment methods were then compared, and the best performing methods identified.  
  \begin{itemize}
  \item Two peer review papers were produced that evaluated length based methods \citep{pons2019performance} and compared length and catch based methods \citep{pons2019catchlen}.
  \item  The best performing methods were Length Based Spawning Potential Ratio \citep[LBSPR][]{hordyk2014novel} and Depletion Based  Stock Reduction Analysis \citep[DBSRA][]{dick2011depletion}. 
- \item These were then implemented as \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes.html}{vignettes} in the mydas package, see the vignettes \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/4/simtest-lbspr.html}{lbspr} and\href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/4/simtest-bdsra.html}{bdsra}.
+ \item These were then implemented as in the mydas package, see the vignettes \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/4/simtest-lbspr.html}{lbspr} and\href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/4/simtest-bdsra.html}{bdsra}.
  \end{itemize}
 \end{itemize}
 
@@ -220,16 +218,14 @@ There were seven tasks namely: i) Stock prioritisation, ii) Data Collation, iii)
 \begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
  \item \textbf{Objective} Method performance appraisal was based on the develop of a set of diagnostics that can be applied across a range of models to assess the stability of the model, sensitivity to assumptions and bias.
  
- \item \textbf{Outcome} A simulation framework based on R was developed using \href{http://www.flr-project.org/}{FLR}, a collection of tools for quantitative fisheries science developed in the R language, that facilitates the construction of simulation models of fisheries systems. Two R packages were developed, \href{https://github.com/flr/flife}{FLife} which uses life history theory to build simulation models and 
-    \href{https://github.com/flr/mydas/wiki}{mydas} 
-    which provides an interface to the data poor methods, \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes.html}{vignettes} document the approach and provide worked examples. 
+ \item \textbf{Outcome} A simulation framework based on R. This was based on \href{http://www.flr-project.org/}{FLR}, a collection of tools for quantitative fisheries science developed in the R language, that facilitates the construction of simulation models of fisheries systems. Development focussed on two main R packages, \href{https://github.com/flr/flife}{FLife} which uses life history theory to build simulation models and 
+    \href{https://github.com/flr/mydas/wiki}{mydas} which provides an interface to the data poor methods for simulation testing. \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes.html}{Vignettes} document the approach and provide worked examples. 
     \begin{itemize}
    \item Operating Models conditioned on life history theory were developed for each of the 
     \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/om.html}{case studies}.
     \item An \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/oemod.html}{Observation Error Model} was developed also developed to simulate psuedo data under a range of assumptions to allow the bias and sensitivity of stock estimates and reference points to be estimated.    
     \item Vignettes include examples of conducting \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/mse.html}{MSE} and the use of \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/parallel.html}{parallel computing}, estimation of
-    \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/proxies.html}{proxy reference points} and calculation of \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/performance.html}{performance metrics},  \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/turbot.html}{OM conditioning} and simulation testing \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/length.html}{length} and 
-   \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/sra.html}{catch} based methods.
+    \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/proxies.html}{proxy reference points},  \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/turbot.html}{OM conditioning}, calculation of \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/performance.html}{performance metrics}, and simulation testing \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/length.html}{length} and running    \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/sra.html}{catch} based methods.
     \end{itemize}
 \end{itemize}
 
@@ -255,18 +251,18 @@ There were seven tasks namely: i) Stock prioritisation, ii) Data Collation, iii)
  Meetings at the Marine Institute ensured that the over-arching goals of the project were achieved.
  \begin{itemize}
   \item  Regular \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/presentations.html}{presentations} were made at the MI and a Workshop was held where the methods were tested.
- \item In addition to ensure good communication between the consortum and the Marine Instiutute and that the project keeps focus and delivers as well as the scheduled meetings code, data and results were made available on the cloud and in a github repository during the life of the project.
+ \item In addition to ensure good communication between the consortum and the Marine Instiutute and that the project keeps focus and delivers as well as the scheduled meetings code, data and results were made available on the cloud and in a github repository during the life of the project. This has now been turned into the \textbf{mydas} package \href{https://github.com/flr/mydAS/wiki}{wiki}
  \end{itemize}
 \end{itemize}
 
 \subsection{Linkage}
 
 \begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
- \item \textbf{Objective} Link with other projects
+ \item \textbf{Objective} Linkage with other projects
  \item \textbf{Outcome}
   \begin{itemize} 
   \item The MyDas framework was developed though case studies in collaboration with the MI.
-  \item Attendance at Workshop on the Development of Quantitative Assessment Methodologies based on LIFE-history traits, exploitation characteristics, and other relevant parameters for data-limited stocks \href{https://www.ices.dk/community/groups/Pages/WKLIFEIX.aspx}{(WKLIFE)} and the Working Group for the Celtic Seas Ecoregion \href{https://www.ices.dk/community/groups/Pages/WGCSE.aspx}{(WGCSE)}, see presentations and report
+  \item Attendance at Workshop on the Development of Quantitative Assessment Methodologies based on LIFE-history traits, exploitation characteristics, and other relevant parameters for data-limited stocks \href{https://www.ices.dk/community/groups/Pages/WKLIFEIX.aspx}{(WKLIFE)} and the Working Group for the Celtic Seas Ecoregion \href{https://www.ices.dk/community/groups/Pages/WGCSE.aspx}{(WGCSE)}, see presentations.
   \begin{itemize}
    \item \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/presentations/mydas-wklifeix.html}{WKLIFE VIII}
    \item \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/presentations/mydas-wklifeviii.html}{WKLIFE IX} 
@@ -284,7 +280,7 @@ There were seven tasks namely: i) Stock prioritisation, ii) Data Collation, iii)
 \input{include/task3.tex}
 
 \newpage\section{Framework}
-\input{include/task4.tex} 
+\input{include/task4.tex}   
 
 \newpage\section{Simulations}
 \input{include/task5.tex}

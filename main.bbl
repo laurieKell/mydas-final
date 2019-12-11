@@ -1,0 +1,123 @@
+\begin{thebibliography}{16}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Cope(2013)]{cope2013implementing}
+J.~M. Cope.
+\newblock Implementing a statistical catch-at-age model (stock synthesis) as a
+  tool for deriving overfishing limits in data-limited situations.
+\newblock \emph{Fisheries Research}, 142:\penalty0 3--14, 2013.
+
+\bibitem[Dick and MacCall(2011)]{dick2011depletion}
+E.~Dick and A.~D. MacCall.
+\newblock Depletion-based stock reduction analysis: A catch-based method for
+  determining sustainable yields for data-poor fish stocks.
+\newblock \emph{Fisheries Research}, 110\penalty0 (2):\penalty0 331--341, 2011.
+
+\bibitem[Fischer et~al.(submitted)Fischer, Jos{\'e}, and Kell]{fischer2019hcr}
+S.~Fischer, D.~Jos{\'e}, and T.~L. Kell.
+\newblock Linking the performance of a data-limited empirical catch rule to
+  life-history traits.
+\newblock \emph{ICES Journal of Marine Science}, submitted.
+
+\bibitem[Froese et~al.(2018)Froese, Winker, Coro, Demirel, Tsikliras,
+  Dimarchopoulou, Scarcella, Probst, Dureuil, and Pauly]{froese2018new}
+R.~Froese, H.~Winker, G.~Coro, N.~Demirel, A.~C. Tsikliras, D.~Dimarchopoulou,
+  G.~Scarcella, W.~N. Probst, M.~Dureuil, and D.~Pauly.
+\newblock A new approach for estimating stock status from length frequency
+  data.
+\newblock \emph{ICES Journal of Marine Science}, 75\penalty0 (6):\penalty0
+  2004--2015, 2018.
+
+\bibitem[Geromont and Butterworth(2014)]{10.1093/icesjms/fst232}
+H.~F. Geromont and D.~S. Butterworth.
+\newblock {Generic management procedures for data-poor fisheries: forecasting
+  with few data}.
+\newblock \emph{ICES Journal of Marine Science}, 72\penalty0 (1):\penalty0
+  251--261, 01 2014.
+\newblock ISSN 1054-3139.
+\newblock \doi{10.1093/icesjms/fst232}.
+\newblock URL \url{https://doi.org/10.1093/icesjms/fst232}.
+
+\bibitem[Hillary et~al.(2015)Hillary, Preece, Davies, Kurota, Sakai, Itoh,
+  Parma, Butterworth, Ianelli, and Branch]{hillary2015scientific}
+R.~M. Hillary, A.~L. Preece, C.~R. Davies, H.~Kurota, O.~Sakai, T.~Itoh, A.~M.
+  Parma, D.~S. Butterworth, J.~Ianelli, and T.~A. Branch.
+\newblock A scientific alternative to moratoria for rebuilding depleted
+  international tuna stocks.
+\newblock \emph{Fish and Fisheries}, 2015.
+
+\bibitem[Hordyk et~al.(2014)Hordyk, Ono, Valencia, Loneragan, and
+  Prince]{hordyk2014novel}
+A.~Hordyk, K.~Ono, S.~Valencia, N.~Loneragan, and J.~Prince.
+\newblock A novel length-based empirical estimation method of spawning
+  potential ratio (spr), and tests of its performance, for small-scale,
+  data-poor fisheries.
+\newblock \emph{ICES Journal of Marine Science}, 72\penalty0 (1):\penalty0
+  217--231, 2014.
+
+\bibitem[Hordyk et~al.(2015)Hordyk, Loneragan, and
+  Prince]{hordyk2015evaluation}
+A.~R. Hordyk, N.~R. Loneragan, and J.~D. Prince.
+\newblock An evaluation of an iterative harvest strategy for data-poor
+  fisheries using the length-based spawning potential ratio assessment
+  methodology.
+\newblock \emph{Fisheries research}, 171:\penalty0 20--32, 2015.
+
+\bibitem[Kell et~al.(2007)Kell, Mosqueira, Grosjean, Fromentin, Garcia,
+  Hillary, Jardim, Mardle, Pastoors, Poos, et~al.]{kell2007flr}
+L.~Kell, I.~Mosqueira, P.~Grosjean, J.~Fromentin, D.~Garcia, R.~Hillary,
+  E.~Jardim, S.~Mardle, M.~Pastoors, J.~Poos, et~al.
+\newblock {FLR:} an open-source framework for the evaluation and development of
+  management strategies.
+\newblock \emph{ICES J. Mar. Sci.}, 64\penalty0 (4):\penalty0 640, 2007.
+
+\bibitem[Martell and Froese(2013)]{martell2013simple}
+S.~Martell and R.~Froese.
+\newblock A simple method for estimating msy from catch and resilience.
+\newblock \emph{Fish and Fisheries}, 14\penalty0 (4):\penalty0 504--514, 2013.
+
+\bibitem[Methot~Jr and Wetzel(2013)]{methot2013stock}
+R.~D. Methot~Jr and C.~R. Wetzel.
+\newblock Stock synthesis: a biological and statistical framework for fish
+  stock assessment and fishery management.
+\newblock \emph{Fisheries Research}, 142:\penalty0 86--99, 2013.
+
+\bibitem[Pons et~al.(2019)Pons, Kell, Rudd, Cope, and
+  Lucena~Fr{\'e}dou]{pons2019performance}
+M.~Pons, L.~Kell, M.~B. Rudd, J.~M. Cope, and F.~Lucena~Fr{\'e}dou.
+\newblock Performance of length-based data-limited methods in a multifleet
+  context: application to small tunas, mackerels, and bonitos in the atlantic
+  ocean.
+\newblock \emph{ICES Journal of Marine Science}, 2019.
+
+\bibitem[Pons et~al.(submitted)Pons, Cope, and T.]{pons2019catchlen}
+M.~Pons, M.~Cope, Jason, and K.~L. T.
+\newblock Comparing performance of catch-based and length-based stock
+  assessment methods in data-limited fisheries.
+\newblock \emph{Canadian Journal of Fisheries and Aquatic Sciences}, submitted.
+
+\bibitem[Ralston et~al.(2011)Ralston, Punt, Hamel, DeVore, and
+  Conser]{Ralston2011meta}
+S.~Ralston, A.~E. Punt, O.~S. Hamel, J.~D. DeVore, and R.~J. Conser.
+\newblock A meta-analytic approach to quantifying scientific uncertainty in
+  stock assessments.
+\newblock \emph{Fishery Bulletin}, 109\penalty0 (2), 2011.
+
+\bibitem[Rudd and Thorson(2017)]{rudd2017accounting}
+M.~B. Rudd and J.~T. Thorson.
+\newblock Accounting for variable recruitment and fishing mortality in
+  length-based stock assessments for data-limited fisheries.
+\newblock \emph{Canadian Journal of Fisheries and Aquatic Sciences},
+  75\penalty0 (7):\penalty0 1019--1035, 2017.
+
+\bibitem[Thorson and Cope(2015)]{thorson2015catch}
+J.~T. Thorson and J.~M. Cope.
+\newblock Catch curve stock-reduction analysis: an alternative solution to the
+  catch equations.
+\newblock \emph{Fisheries Research}, 171:\penalty0 33--41, 2015.
+
+\end{thebibliography}

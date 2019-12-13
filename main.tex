@@ -184,7 +184,7 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
 %\textit{\textbf{A number of example stocks were initially identified, and  the final list of stocks was prioritised using criteria like: economic value of the stock; importance of the species to the ecosystem (key-stone species); sensitivity to the impacts of fishing; available data.}}
 
 \begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
- \item \textbf{Objective} A number of potential stocks were identified at the start of the project from which the final choice of case studies were selected based on economic value; importance of the species to the ecosystem (i.e. key-stone species); sensitivity to the impacts of fishing; and availability of data.
+ \item \textbf{Objective} A number of potential stocks were identified at the start of the project from which the final choice of case studies were selected based on economic value; importance of the species to the ecosystem (i.e. key-stone species); sensitivity to the impacts of fishing; and availability of data \coilin{[include hyperlink to PSA work here?]}.
  \item \textbf{Outcome} The final case studies chosen were sprat, brill, turbot, thornback ray, pollack, lobster, and razor clams, and reflect a range of valuable stocks, ecological roles and \hyperref[fig:stocks]{life histories}.
 \end{itemize}
 
@@ -195,7 +195,7 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
  \item \textbf{Objective} Data collation ran in parallel with other tasks, and relied on existing data sets which were either available from the Marine Institute, other European labs/agencies or publicly available. 
  \begin{itemize} \item The main datasets were fishery independent surveys, commercial catches, stock assessment inputs and outputs and life history parameters.
  \end{itemize}
- \item \textbf{Outcome} The data were collated into a PostgreSQL \hyperref[appendix:db]{database} and  \hyperref[appendix:datasets]{R code} developed for processing. 
+ \item \textbf{Outcome} The data were collated into a PostgreSQL \hyperref[appendix:db]{database} \coilin{[need to populate this appendix]} and  \hyperref[appendix:datasets]{R code} \coilin{[make link live]} developed for processing. 
  \begin{itemize}
     \item At the end of the project the data were archived on \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/db.html}{google drive}.
  \end{itemize}
@@ -209,23 +209,23 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
  \begin{itemize}
  \item Two peer review papers were produced that evaluated length based methods \citep{pons2019performance} and compared length and catch based methods \citep{pons2019catchlen}.
  \item  The best performing methods were Length Based Spawning Potential Ratio \citep[LBSPR][]{hordyk2014novel} and Depletion Based  Stock Reduction Analysis \citep[DBSRA][]{dick2011depletion}. 
- \item These were then implemented as in the mydas package, see the vignettes \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/4/simtest-lbspr.html}{lbspr} and\href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/4/simtest-bdsra.html}{bdsra}.
+ \item These were then implemented as in the mydas package, see the vignettes \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/4/simtest-lbspr.html}{lbspr} and\href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/4/simtest-bdsra.html}{bdsra} \coilin{[\texttt{echo = TRUE} these vignettes for reproducibility?]}.
  \end{itemize}
 \end{itemize}
 
 \subsection{Performance Appraisal}
  
 \begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
- \item \textbf{Objective} Method performance appraisal was based on the develop of a set of diagnostics that can be applied across a range of models to assess the stability of the model, sensitivity to assumptions and bias.
+ \item \textbf{Objective} Method performance appraisal was based on the development of a set of diagnostics that can be applied across a range of models to assess the stability of the model, sensitivity to assumptions and bias.
  
  \item \textbf{Outcome} A simulation framework based on R. This was based on \href{http://www.flr-project.org/}{FLR}, a collection of tools for quantitative fisheries science developed in the R language, that facilitates the construction of simulation models of fisheries systems. Development focussed on two main R packages, \href{https://github.com/flr/flife}{FLife} which uses life history theory to build simulation models and 
     \href{https://github.com/flr/mydas/wiki}{mydas} which provides an interface to the data poor methods for simulation testing. \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes.html}{Vignettes} document the approach and provide worked examples. 
     \begin{itemize}
    \item Operating Models conditioned on life history theory were developed for each of the 
     \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/om.html}{case studies}.
-    \item An \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/oemod.html}{Observation Error Model} was developed also developed to simulate pseudo data under a range of assumptions to allow the bias and sensitivity of stock estimates and reference points to be estimated.    
+    \item An \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/oemod.html}{Observation Error Model} was developed to simulate pseudo data under a range of assumptions to allow the bias and sensitivity of stock estimates and reference points to be estimated.    
     \item Vignettes include examples of conducting \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/mse.html}{MSE} and the use of \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/parallel.html}{parallel computing}, estimation of
-    \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/proxies.html}{proxy reference points},  \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/turbot.html}{OM conditioning}, calculation of \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/performance.html}{performance metrics}, and simulation testing \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/length.html}{length} and running    \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/sra.html}{catch} based methods.
+    \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/proxies.html}{proxy reference points},  \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/turbot.html}{OM conditioning}, calculation of \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/performance.html}{performance metrics}, and simulation testing \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/length.html}{length} and running    \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/sra.html}{catch} \coilin{[typo in vignette title]} based methods.
     \end{itemize}
 \end{itemize}
 
@@ -262,11 +262,13 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
  \item \textbf{Outcome}
   \begin{itemize} 
   \item The MyDas framework was developed though case studies in collaboration with the MI.
+  \item Direct links to Cullen fellowship project \emph{Monkfish management strategy evaluation} (CF/16/03) were established. In particular, Ph.D. candidate Luke Batts is testing stage-based stock assessment methods using monkfish stocks simulated with \href{https://github.com/flr/flife}{FLife}. This project has also made extensive use of the MSE frameworks established within MyDas and FLR to test key uncertainties in advice for monkfish stocks. 
   \item Attendance at Workshop on the Development of Quantitative Assessment Methodologies based on LIFE-history traits, exploitation characteristics, and other relevant parameters for data-limited stocks \href{https://www.ices.dk/community/groups/Pages/WKLIFEIX.aspx}{(WKLIFE)} and the Working Group for the Celtic Seas Ecoregion \href{https://www.ices.dk/community/groups/Pages/WGCSE.aspx}{(WGCSE)}, see presentations.
   \begin{itemize}
    \item \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/presentations/mydas-wklifeix.html}{WKLIFE VIII}
    \item \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/presentations/mydas-wklifeviii.html}{WKLIFE IX} 
  \end{itemize}
+ \item Attendance at the \href{https://www.marine.ie/Home/site-area/news-events/news/first-environmetrics-forum-data-experts-ireland}{first Irish Environmetrics Forum} where methods for policy-relevant advice were presented and discussed.
  \end{itemize}
 \end{itemize}
 

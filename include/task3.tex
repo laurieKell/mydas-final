@@ -27,7 +27,7 @@ Landings are negligible in comparison to discards and stocks that are  primarily
 For data limited stocks a number of methods already exist, for example the ICES Working Group on Category 3 and 4 stocks \href{ 
 http://www.ices.dk/sites/pub/Publication Reports/Expert Group Report/acom/2017/WKMSYCAT34/01 WKMSYCAT34 REPORT 2017.pdf}{(WGMSYCAT34)} has been working on rules for survey-based assessments which indicate trends in stock status (Category 3) or for which only catch data are available (Category 4). 
 
-Data limited methods in use worldwide were summarised in a \href{https://docs.google.com/spreadsheets/d/17_qQdzDY41ZrL0yT6QtHpUR4_ydxx_xfCh4GiDqYymU/edit?usp=sharing}{google spreadsheet}. Following which five catch and three length based methods, were then selected for simulationn testing. The choice of methods was based on the availablity of code, whether the method had been peer reviewed and the appropriateness of estimated quantities for use as proxy reference points. The methods were then simulation tested \citep{pons2019catchlen} in order to select the best catch and length-only methods.
+Data limited methods in use worldwide were summarised in a \href{https://docs.google.com/spreadsheets/d/17_qQdzDY41ZrL0yT6QtHpUR4_ydxx_xfCh4GiDqYymU/edit?usp=sharing}{google spreadsheet}. Following which five catch and three length based methods, were then selected for simulation testing. The choice of methods was based on the availability of code, whether the method had been peer reviewed and the appropriateness of estimated quantities for use as proxy reference points. The methods were then simulation tested \citep{pons2019catchlen} in order to select the best catch and length-only methods.
 
 
 \subsubsection*{Catch Only}
@@ -54,7 +54,7 @@ LBB is a simple and fast method for estimating relative stock size that uses a B
 
 \subsubsection*{Evaluation}
 
-The methods were simulation tested for three life history types (short, medium and long-lived), three historical exploitation scenarios, and three depleted levels \citep{pons2019catchlen}. The results of the simulations are shown in Figure \ref{fig:cln}. Of the five catch based methods SSCOM performs poorly in terms of precison and bias, while SSS is the least bias DBSRA the most precise. The length based methods tend to perform less well than the catch based methods, while LIME is the least biased while LBSPR is the most precise.
+The methods were simulation tested for three life history types (short, medium and long-lived), three historical exploitation scenarios, and three depleted levels \citep{pons2019catchlen}. The results of the simulations are shown in Figure \ref{fig:cln}. Of the five catch based methods SSCOM performs poorly in terms of precision and bias, while SSS is the least bias DBSRA the most precise. The length based methods tend to perform less well than the catch based methods, while LIME is the least biased while LBSPR is the most precise.
 
 \begin{figure*}[h!]\centering\includegraphics[width=6in]{figs/Figure_1.png}\label{fig:cln}\caption{Relative error (RE) in exploitation rate for all the catch-based and length-based models considered under the different harvest scenarios (a) and depletion scenarios for differing life histories, (b) short-lived, (c) medium-lived, and (d) long-lived.}
 \end{figure*}
@@ -63,5 +63,5 @@ Bias and precision are both important factors to consider when assessing fish st
 
 The best performing catch-only methods were SSS and DBSRA, SSS was the least biased method while DBSRA was the most precise. A problem with SSS is that it is based on SS3 and so is a complicated method that requires a lot of assumptions in the form of fixed parameters. DBSRA in contrast is based on a biomass based stock production function and so requires fewer assumptions, it also allows data poor and data rich assessments to be compared, i.e. if an index of abundance could be developed then an ICES Category 3 assessment could be converted into a Category 1 assessment. This allows the value of information to be evaluated. Therefore DBSRA was selected for further evaluation.  
 
-Both LBSPR and LIME use the same inputs, the main difference is that LIME is a non-equilibrium method, takes longer to run than LBSPR and ofen failed to converge, so although LIME estimates are less biased than LBSPR it is likely to perform poorly in closed loop simulations. LBB performed poorly in terms of both bias and precision. Therefore LBSPR was selected for the next stage of simulation evaluation.
+Both LBSPR and LIME use the same inputs, the main difference is that LIME is a non-equilibrium method, takes longer to run than LBSPR and often failed to converge, so although LIME estimates are less biased than LBSPR it is likely to perform poorly in closed loop simulations. LBB performed poorly in terms of both bias and precision. Therefore LBSPR was selected for the next stage of simulation evaluation.
 

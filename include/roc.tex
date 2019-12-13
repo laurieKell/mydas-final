@@ -19,13 +19,13 @@ The  Operating Model (OM) was conditioning on turbot life history characteristic
 
 The HCR was modelled as part of a  Management Procedure (MP) where catches are increased when the trend in an index of abundance is positive, and decreased if the trend is negative, namely
 
-where  is the slope in the regression of  against year for the most recent n years and  and  are  the tunable parameters andactions asymmetry so that decreases in the index do not result in the same relative change as as an increase.
+where  is the slope in the regression of  against year for the most recent n years and  and  are  the tunable parameters and actions asymmetry so that decreases in the index do not result in the same relative change as as an increase.
 When tuning an empirical MP it is run for a range of control parameters values (i.e. for,and ). These are then chosen based on the performance of the MP, i.e.  maximising a reward function based on management objectives. It can be difficult, however, to specify a single reward function, due to trade-offs between multiple objectives. Deciding which is the “best” MP therefore requires an iterative process involving managers, asset holders, stakeholders and scientists.
 Once objectives are agreed the traditional way to find the control parameters is to perform  a grid search, i.e. an exhaustive search through a manually specified set of control parameters. Even for a limited number of control parameters this can take a substantial amount of computing time. Tuning was performed using random search where control parameters are selected from all the potential combinations at random.  Random search has proven to yield better results in comparison to grid search. Drawbacks of random search are that it may yields high variance during computing and since the selection of parameters is completely random no intelligence is used to sample the combinations and so lick plays its part. 
 
 Trade offs between multiple objectives were evaluated by identifying pareto-optimal solutions (Mishra, et al., 2002) using support vector regression (SVR, Smola and Schölkopf, 2004). The best HCR parameters were then identified using a Genetic Algorithm (GA, Whitley, 1994). Both SVR and GAs are machine learning techniques. 
 In optimisation studies with multi-objectives the focus is usually on finding a global optimum, i.e. the global Pareto-optimal frontier, representing the best possible objective values (Deb and Gupta, 2005).  However, in fisheries  there is usually high uncertainty about resource dynamics and solutions are therefore sensitive to the assumptions and environmental variability.  Therefore rather than finding global solution it is more important to find  robust solutions which are insensitive to uncertainty about processes. 
-Figure 1 shows the trade-off between yield (Yield:MSY) and safety (the minimum expected recruitment relative to). Individual MSE (blue) results are highly variable due to variablity in recruitment and the Index of abundance used in the MP. The pareto frontier   derived from SVR are shown (red) and an example of an optimal solution highlighted (large dot).
+Figure 1 shows the trade-off between yield (Yield:MSY) and safety (the minimum expected recruitment relative to). Individual MSE (blue) results are highly variable due to variability in recruitment and the Index of abundance used in the MP. The pareto frontier   derived from SVR are shown (red) and an example of an optimal solution highlighted (large dot).
 Figures 2 show the calibration curves, obtained using the GA for the control parameters  and . This was obtained from the pareto frontiers by finding the values that corresponded to the optimal solution. If the management objectives are agreed the corresponding control value can be read off from the Y-axes. The scatter of points reflects that the Pareto frontiers are hyper-dimensional surfaces projected into 2 dimensions.
 Once the control parameters that best met the management objectives were found the MSE was run for the control parameters for 2 scenarios corresponding to the Index of abundance CV (10%, 20% and 30%) and the number of years (3, 5, and 7 column) used in the regression to estimate the trend in the index; the summary statistics are shown in Figure 3.
 An objective of the approach was to develop a risk based framework for conducting MSE, by allowing asset and stake holders to more easily to evaluate the trade-offs between management objectives and the impact of uncertainty when conducting MSE. The framework also provides an efficient way of tuning Management Procedures so that case specific management strategies can more easily be developed. However, since random search was used the outcomes partly depend on chance, the next step is to add intelligence by using machine learning to choose the control parameters.
@@ -90,7 +90,7 @@ Whitley, D., 1994. A genetic algorithm tutorial. Statistics and computing, 4(2
 
 \section{Outline}
 \begin{itemize}
- \item Robustness, despite what you dont know
+ \item Robustness, despite what you dint know
  \item Value-of-information
  \item Value-of-control
  \item Trends v. absolute
@@ -110,7 +110,7 @@ An important characteristic of PA advice is that it should be robust to uncertai
 
 \section{Material and Methods}
 
-OMs were conditioned on life histories representing a range of population dynaics, namely turbot, brill, thornback ray, pollack and sprat. Scenarios that represent the main sources of uncertainty were also developed. Resource dynamics were simulated assuming an increasing trend in fishing mortality ($F$) that led to overfishing, then a recovery plan was implemented to bring fishing back to the $F_{MSY}$ level. Length based indicators were then generates using the OEM and compared to the fishing mortality in the OM, using Reciever Operating Characteristic (ROC) curves \citep{green1966signal}. A ROC curve can be thought of as a plot of the power as a function of the Type I Error of the decision rule. If the probability distributions for both detection and false alarm are known, the ROC curve is generated by plotting the cumulative distribution function (area under the probability distribution from  to the discrimination threshold) of the detection probability in the y-axis versus the cumulative distribution function of the false-alarm probability on the x-axis. A ROC analysis therefore provides a tool to select the best candidate indicators. 
+OMs were conditioned on life histories representing a range of population dynamics, namely turbot, brill, thornback ray, pollack and sprat. Scenarios that represent the main sources of uncertainty were also developed. Resource dynamics were simulated assuming an increasing trend in fishing mortality ($F$) that led to overfishing, then a recovery plan was implemented to bring fishing back to the $F_{MSY}$ level. Length based indicators were then generates using the OEM and compared to the fishing mortality in the OM, using Receiver Operating Characteristic (ROC) curves \citep{green1966signal}. A ROC curve can be thought of as a plot of the power as a function of the Type I Error of the decision rule. If the probability distributions for both detection and false alarm are known, the ROC curve is generated by plotting the cumulative distribution function (area under the probability distribution from  to the discrimination threshold) of the detection probability in the y-axis versus the cumulative distribution function of the false-alarm probability on the x-axis. A ROC analysis therefore provides a tool to select the best candidate indicators. 
 
 \subsection{Methods}
 
@@ -120,10 +120,10 @@ These processes allow an equilibrium per-recruit model to be parameterised, whic
 
 \subsubsection{Scenarios}
 
-Even for data-rich stock assessments there is often large uncertainty about the dynamics \citep[i.e. model uncertainty;][]{punt2008refocusing}. This means that estimates of stock status are highly sensitive to assumptions about natural mortality-at-age \citep{jiao2012modelling}, vulnerability of age classes to the fisheries \citep{brooks2009analytical}, and the relationship between stock and recruitment which is difficult to estimate in practice \citep[e.g.][]{vert2013frequency,szuwalski2014examining,cury2014resolving,kell2015spawning,pepin2015reconsidering}. Therefore scenarios \citep[][]{ono2015importance,kell2015spawning,boorman1997recognising} representing these sources of uncertainty were developed for selection pattern, natural mortality, steepness of the stock recruitment relationship, recruitment variablility and sample size (\textbf{Table} \ref{tab:scen})
+Even for data-rich stock assessments there is often large uncertainty about the dynamics \citep[i.e. model uncertainty;][]{punt2008refocusing}. This means that estimates of stock status are highly sensitive to assumptions about natural mortality-at-age \citep{jiao2012modelling}, vulnerability of age classes to the fisheries \citep{brooks2009analytical}, and the relationship between stock and recruitment which is difficult to estimate in practice \citep[e.g.][]{vert2013frequency,szuwalski2014examining,cury2014resolving,kell2015spawning,pepin2015reconsidering}. Therefore scenarios \citep[][]{ono2015importance,kell2015spawning,boorman1997recognising} representing these sources of uncertainty were developed for selection pattern, natural mortality, steepness of the stock recruitment relationship, recruitment variability and sample size (\textbf{Table} \ref{tab:scen})
 
 \begin{itemize}
- \item Selection pattern: \textbf{same as matirity ogive}; dome shaped; constant across all ages.
+ \item Selection pattern: \textbf{same as maturity ogive}; dome shaped; constant across all ages.
  \item Natural Mortality: \textbf{varies by age}; 0.2 
  \item Steepness of the stock recruitment: \textbf{0.7}; 0.9 
  \item Recruitment CV: \textbf{30\%}; \textbf{50\%}; \textbf{AR}
@@ -141,7 +141,7 @@ Simple catch rules have been developed for data poor stock, for example the “2
 
 \begin{equation} C_{y+1} = C_{y-1}rfb \end{equation}
 
-The advised catch is based on the previous catch $C_{y-1}$, multiplied by three components $r$, $f$ and $b$, each representing a particular stock characteristic. Component $r$ corresponds to the trend in a biomass index, component $f$ uses a proxy  for the rateio $F:F_{MSY}$ based on length, and $b$ is a safeguard which protects the stock by not allowing catch to increase unlimitedly once the biomass index drops below a threshold. In this study we focus on the $f$ component, although the same approach can be used to screen any data source or even outputs from data rich assessments.
+The advised catch is based on the previous catch $C_{y-1}$, multiplied by three components $r$, $f$ and $b$, each representing a particular stock characteristic. Component $r$ corresponds to the trend in a biomass index, component $f$ uses a proxy  for the ratio $F:F_{MSY}$ based on length, and $b$ is a safeguard which protects the stock by not allowing catch to increase unlimitedly once the biomass index drops below a threshold. In this study we focus on the $f$ component, although the same approach can be used to screen any data source or even outputs from data rich assessments.
 
 Empirical indicators based on length, used as proxies for exploitation rate, include
 
@@ -153,7 +153,7 @@ Empirical indicators based on length, used as proxies for exploitation rate, inc
  \item $L_{c}$ Length at $50\%$ of modal abundance
  \item $L_{mean}$ Mean length of individuals $> L_c$
  \item $L_{max_{y}}$ Length class with maximum biomass in catch
- \item $L_{mean}$ Meanlength of individuals $> L$
+ \item $L_{mean}$ Mean length of individuals $> L$
 \end{itemize}
 
 and potential reference points include
@@ -221,7 +221,7 @@ The ROC curve is constructed by sorting the observed outcomes from the OM by the
 
 \textbf{Figure} \ref{fig:roc} ROC curves for ICES indicators
 
-\textbf{Figure} \ref{fig:discrim} boxplots comparing ICES indicators/reference points to ROC tresholds
+\textbf{Figure} \ref{fig:discrim} boxplots comparing ICES indicators/reference points to ROC thresholds
 
 \textbf{Figure} \ref{fig:tree} Regression Tree
 
@@ -314,7 +314,7 @@ Laurence Kell's involvement was funded through the MyDas project under the Marin
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{roc-overfish-ref-pollack-1.png}
-\caption{Descrimnation thresholds.}
+\caption{Discrimination thresholds.}
 \label{fig:discrim}
 \end{figure}
 

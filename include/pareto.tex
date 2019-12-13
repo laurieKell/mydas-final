@@ -24,13 +24,13 @@ The HCR was modelled as part of a  Management Procedure (MP) where catches are i
 
 
 
-where  is the slope in the regression of  against year for the most recent n years and  and  are  the tunable parameters andactions asymmetry so that decreases in the index do not result in the same relative change as as an increase.
+where  is the slope in the regression of  against year for the most recent n years and  and  are  the tunable parameters and actions asymmetry so that decreases in the index do not result in the same relative change as as an increase.
 When tuning an empirical MP it is run for a range of control parameters values (i.e. for,and ). These are then chosen based on the performance of the MP, i.e.  maximising a reward function based on management objectives. It can be difficult, however, to specify a single reward function, due to trade-offs between multiple objectives. Deciding which is the “best” MP therefore requires an iterative process involving managers, asset holders, stakeholders and scientists.
 Once objectives are agreed the traditional way to find the control parameters is to perform  a grid search, i.e. an exhaustive search through a manually specified set of control parameters. Even for a limited number of control parameters this can take a substantial amount of computing time. Tuning was performed using random search where control parameters are selected from all the potential combinations at random.  Random search has proven to yield better results in comparison to grid search. Drawbacks of random search are that it may yields high variance during computing and since the selection of parameters is completely random no intelligence is used to sample the combinations and so lick plays its part. 
 
 Trade offs between multiple objectives were evaluated by identifying pareto-optimal solutions (Mishra, et al., 2002) using support vector regression (SVR, Smola and Schölkopf, 2004). The best HCR parameters were then identified using a Genetic Algorithm (GA, Whitley, 1994). Both SVR and GAs are machine learning techniques. 
 In optimisation studies with multi-objectives the focus is usually on finding a global optimum, i.e. the global Pareto-optimal frontier, representing the best possible objective values (Deb and Gupta, 2005).  However, in fisheries  there is usually high uncertainty about resource dynamics and solutions are therefore sensitive to the assumptions and environmental variability.  Therefore rather than finding global solution it is more important to find  robust solutions which are insensitive to uncertainty about processes. 
-Figure 1 shows the trade-off between yield (Yield:MSY) and safety (the minimum expected recruitment relative to). Individual MSE (blue) results are highly variable due to variablity in recruitment and the Index of abundance used in the MP. The pareto frontier   derived from SVR are shown (red) and an example of an optimal solution highlighted (large dot).
+Figure 1 shows the trade-off between yield (Yield:MSY) and safety (the minimum expected recruitment relative to). Individual MSE (blue) results are highly variable due to variability in recruitment and the Index of abundance used in the MP. The pareto frontier   derived from SVR are shown (red) and an example of an optimal solution highlighted (large dot).
 Figures 2 show the calibration curves, obtained using the GA for the control parameters  and . This was obtained from the pareto frontiers by finding the values that corresponded to the optimal solution. If the management objectives are agreed the corresponding control value can be read off from the Y-axes. The scatter of points reflects that the Pareto frontiers are hyper-dimensional surfaces projected into 2 dimensions.
 Once the control parameters that best met the management objectives were found the MSE was run for the control parameters for 2 scenarios corresponding to the Index of abundance CV (10%, 20% and 30%) and the number of years (3, 5, and 7 column) used in the regression to estimate the trend in the index; the summary statistics are shown in Figure 3.
 An objective of the approach was to develop a risk based framework for conducting MSE, by allowing asset and stake holders to more easily to evaluate the trade-offs between management objectives and the impact of uncertainty when conducting MSE. The framework also provides an efficient way of tuning Management Procedures so that case specific management strategies can more easily be developed. However, since random search was used the outcomes partly depend on chance, the next step is to add intelligence by using machine learning to choose the control parameters.
@@ -98,17 +98,17 @@ An example of conducting Management Strategy Evaluation (MSE) using machine lear
 
 \section{Introduction}
 
-The adoption of the precautionary approach \citep[PA,][]{garcia1996precautionary} requires fisheries management to deal explicitly with uncertainty in order to reduce risks to resources, the environment, fishing communities and society. To do this requires the development of robust control rules that function correctly despite the presence of uncertainty \citep{radatz1990ieee, zhou1996robust}. There are many important process, however, about which there is little infomation in datasets used to monitor, assess and control fish stocks  \citep[e.g.][]{bjoernstad2004trends, botsford}.  
+The adoption of the precautionary approach \citep[PA,][]{garcia1996precautionary} requires fisheries management to deal explicitly with uncertainty in order to reduce risks to resources, the environment, fishing communities and society. To do this requires the development of robust control rules that function correctly despite the presence of uncertainty \citep{radatz1990ieee, zhou1996robust}. There are many important process, however, about which there is little information in datasets used to monitor, assess and control fish stocks  \citep[e.g.][]{bjoernstad2004trends, botsford}.  
 
 There has been a trend towards using stock assessment models of increasing complexity \citep[e.g][]{}, which has led to two problems including a lack of transparency because of many internal, inexplicit and often poorly documented assumptions and a lack of access, as only a few highly skilled modellers can run such complex models \citep{hilborn2003state}.  An alternative approach is to use Management Strategy Evaluation (MSE) to evaluate management decisions based on simple rules that can be data rather than model-based. The rules can be black boxes (with no knowledge of the system dynamics) and act as feedback controllers. Empirical rules based on data work like a thermostat which is able to keep the state of the system within agreed bounds despite being unaware of the internal structure of the system. 
 
-We conduct MSE using an Operating Model (OM) conditioned on life history characteristics which is able evaluate the impact of alternative hypotheses related to population processes. We then evaluate a Management Procedure (MP) based on an emprical HCR where catches are increased when the trend in an index of abundance is positive, and decreased if the trend is negative. 
+We conduct MSE using an Operating Model (OM) conditioned on life history characteristics which is able evaluate the impact of alternative hypotheses related to population processes. We then evaluate a Management Procedure (MP) based on an empirical HCR where catches are increased when the trend in an index of abundance is positive, and decreased if the trend is negative. 
 
 The aims of the study are to provide a worked example of how to
  \begin{itemize}
   \item  Develop a risk based framework for conducting MSE,  where is risk is an uncertainty that matters and what matters are management objectives.
   \item  Develop an efficient way of tuning Management Procedures so that case specific management strategies can be developed.
-  \item  Explore multiple conficting objectives using Pareto-optimal solutions.
+  \item  Explore multiple conflicting objectives using Pareto-optimal solutions.
   \item  Allow stakeholders to more easily agree management objectives and the trade-offs between them when conducting M
  \end{itemize}
 
@@ -129,7 +129,7 @@ These processes allow an equilibrium per-recruit model to be parameterised, whic
 
 The HCR was based on that of the Commission for the Conservation of Southern Bluefin Tuna (CCSBT) which has several parameters that require tuning; i.e. the “best” parameters are found by choosing  values that optimises the outcomes. Where the optimal outcomes depend on the objectives of  asset and stakeholders. 
 
-The Management Procedure (MP) was based on an emprical HCR where catches are increased when the trend in an index of abundance is positive, alternatively catches are decreased if the trend is negative, namely 
+The Management Procedure (MP) was based on an empirical HCR where catches are increased when the trend in an index of abundance is positive, alternatively catches are decreased if the trend is negative, namely 
 
 \begin{equation}
  TAC^1_{y+1}=TAC_y\times 

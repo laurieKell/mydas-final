@@ -34,9 +34,13 @@
 \usepackage{color}
 \definecolor{darkgreen}{rgb}{0.0, 0.5, 0.0}
 \definecolor{darkred}{rgb}{0.7, 0.11, 0.11}
+\definecolor{darkblue}{rgb}{0,0,0.5}
+\definecolor{shadecolor}{rgb}{1,1,0.95}
+\definecolor{shade}{rgb}{1,1,0.95}
+\definecolor{coilin}{rgb}{1,0,1}
 
 \newcommand{\laurie}{\textcolor{red}}
-\newcommand{\coilin}{\textcolor{green}}
+\newcommand{\coilin}{\textcolor{coilin}}
 \newcommand{\hans}{\textcolor{darkred}}
 \newcommand{\todo}[1]{\laurie{\textbf{\textit{#1}}}}
 
@@ -109,9 +113,6 @@
 
 \usepackage{listings}
 
-\definecolor{darkblue}{rgb}{0,0,0.5}
-\definecolor{shadecolor}{rgb}{1,1,0.95}
-\definecolor{shade}{rgb}{1,1,0.95}
 
 \lstset{ %
 language=R, % the language of the code
@@ -186,7 +187,7 @@ Data-poor stock assessment models in use worldwide were reviewed and simulation 
 
 \begin{itemize}
  \item  \hyperlink{todo1}{Task 7 (section 8) needs work - expand briefly on 2.7}
-  \item \hyperlink{todo2}{Include the ROC'n'Roll appendix}
+ %\item \hyperlink{todo2}{Include the ROC'n'Roll appendix}
  \item  \hyperlink{todo3}{Additional pieces on a delay-differential framework are less developed but conducted under mydas and could perhaps be included in an additional work section}
 \end{itemize}
 
@@ -201,7 +202,7 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
 %\textit{\textbf{A number of example stocks were initially identified, and  the final list of stocks was prioritised using criteria like: economic value of the stock; importance of the species to the ecosystem (key-stone species); sensitivity to the impacts of fishing; available data.}}
 
 \begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
- \item \textbf{Objective} A number of potential stocks were identified at the start of the project from which the final choice of case studies were selected based on economic value; importance of the species to the ecosystem (i.e. key-stone species); sensitivity to the impacts of fishing; and availability of data \coilin{[include hyperlink to PSA work here?]}.
+ \item \textbf{Objective} A number of potential stocks were identified at the start of the project from which the final choice of case studies were selected based on economic value; importance of the species to the ecosystem (i.e. key-stone species); sensitivity to the impacts of fishing; and availability of data. %\coilin{[include hyperlink to PSA work here?]}.
  \item \textbf{Outcome} The final case studies chosen were sprat, brill, turbot, thornback ray, pollack, lobster, and razor clams, and reflect a range of valuable stocks, ecological roles and \hyperref[fig:stocks]{life histories}.
 \end{itemize}
 
@@ -212,9 +213,10 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
  \item \textbf{Objective} Data collation ran in parallel with other tasks, and relied on existing data sets which were either available from the Marine Institute, other European labs/agencies or publicly available. 
  \begin{itemize} \item The main datasets were fishery independent surveys, commercial catches, stock assessment inputs and outputs and life history parameters.
  \end{itemize}
- \item \textbf{Outcome} The data were collated into a PostgreSQL \hyperref[appendix:db]{database} and  \hyperref[appendix:datasets]{R code} \coilin{[make link live]} developed for processing. 
+ \item \textbf{Outcome} The data were collated into a PostgreSQL database \hyperref[appendix:db]{database} and \hyperref[appendix:code]{summarised}, using \href{https://drive.google.com/file/d/15Lb1Npyi-cOIPCLWbR4YrNWkAZuEyc1X/view?usp=sharing}{R code}.
+ %\coilin{[make link live]} developed for processing. 
  \begin{itemize}
-    \item At the end of the project the data were archived on \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/db.html}{google drive}.
+    \item At the end of the project the data were archived on \href{https://drive.google.com/open?id=1bilqGhV1-JzEsPW_vQBkz65GwdjIsaky}{google drive}.
  \end{itemize}
 \end{itemize}
 
@@ -226,7 +228,7 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
  \begin{itemize}
  \item Two peer review papers were produced that evaluated length based methods \citep{pons2019performance} and compared length and catch based methods \citep{pons2019catchlen}.
  \item  The best performing methods were Length Based Spawning Potential Ratio \citep[LBSPR][]{hordyk2014novel} and Depletion Based  Stock Reduction Analysis \citep[DBSRA][]{dick2011depletion}. 
- \item These were then implemented as in the mydas package, see the vignettes \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/4/simtest-lbspr.html}{lbspr} and\href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/4/simtest-bdsra.html}{bdsra} \coilin{[\texttt{echo = TRUE} these vignettes for reproducibility?]}.
+ \item These were then implemented as in the mydas package, see the vignettes \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/4/simtest-lbspr.html}{lbspr} and\href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/4/simtest-bdsra.html}{bdsra} written to ensure reproducibility. %\coilin{[\texttt{echo = TRUE} these vignettes for reproducibility?]}.
  \end{itemize}
 \end{itemize}
 
@@ -242,7 +244,7 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
     \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/om.html}{case studies}.
     \item An \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/oemod.html}{Observation Error Model} was developed to simulate pseudo data under a range of assumptions to allow the bias and sensitivity of stock estimates and reference points to be estimated.    
     \item Vignettes include examples of conducting \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/mse.html}{MSE} and the use of \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/parallel.html}{parallel computing}, estimation of
-    \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/proxies.html}{proxy reference points},  \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/turbot.html}{OM conditioning}, calculation of \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/performance.html}{performance metrics}, and simulation testing \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/length.html}{length} and running    \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/sra.html}{catch} \coilin{[typo in vignette title]} based methods.
+    \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/proxies.html}{proxy reference points},  \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/turbot.html}{OM conditioning}, calculation of \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/performance.html}{performance metrics}, and simulation testing \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/length.html}{length} and running    \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes/sra.html}{catch} %\coilin{[typo in vignette title]} based methods.
     \end{itemize}
 \end{itemize}
 
@@ -289,19 +291,19 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
  \end{itemize}
 \end{itemize}
 
-\newpage\section{Case Studies}
+\newpage\section{Case Studies}\label{sec:case}
 \input{include/task1.tex} 
 
-\newpage\section{Data Collation}
+\newpage\section{Data Collation}\label{sec:data}
 \input{include/task2.tex}
 
-\newpage\section{Assessment Methods}
+\newpage\section{Assessment Methods}\label{sec:methods}
 \input{include/task3.tex}
 
-\newpage\section{Framework}
+\newpage\section{Framework}\label{sec:framework}
 \input{include/task4.tex}   
 
-\newpage\section{Simulations}
+\newpage\section{Simulations}\label{sec:sims}
 \input{include/task5.tex}
 
 \newpage\section{Liason and Linkage}\label{sec:link}
@@ -329,7 +331,7 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
 
 \includepdf[pages=1-5,pagecommand={},width=\textwidth]{include/Databasedescripton.pdf}
 
-\subsection{Dataset Summary}\label{appendix:datsets}
+\subsection{Dataset Summary}\label{appendix:code}
 
 \includepdf[pages=-,pagecommand={},width=\textwidth]{include/dataSmry.pdf}
 
@@ -346,11 +348,16 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
 \includepdf[pages=-,pagecommand={},width=\textwidth]{include/12553688_File000007_240052393.pdf}
 
 \subsubsection{ROC}
-\hypertarget{todo2}{\todo{Include the ROC'n'Roll appendix}}
-\includepdf[pages=1,pagecommand={},width=\textwidth]{include/roc.pdf}
+
+A peer review paper is being prepared, the results can be found in a \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/papers/roc/roc.html}{vignette} and the \href{https://drive.google.com/open?id=1tVApe-tfO2tRBGy_HN-Pubc4wmQtjDdE}{analysis} is on google drive.
+
 
 \subsubsection{Pareto}
-\includepdf[pages=1,pagecommand={},width=\textwidth]{include/pareto.pdf}
+
+A peer review paper is being prepared, the results can be found in a \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/papers/pareto/pareto.html}{vignette} and the \href{https://drive.google.com/open?id=1B33OKH5UTFyi99S-jD1J-1fsrtMBE5WG}{analysis} is on google drive.
+
+%\includepdf[pages=-,pagecommand={},width=\textwidth]{include/pareto.pdf}
+
 
 \subsubsection{Delay Difference}
 

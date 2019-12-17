@@ -32,15 +32,18 @@
 \setkeys{Gin}{width=0.75\textwidth}
 
 \usepackage{color}
-\newcommand{\laurie}{\textcolor{blue}}
+\newcommand{\laurie}{\textcolor{red}}
 \newcommand{\coilin}{\textcolor{green}}
+\newcommand{\todo}[1]{\laurie{\textbf{\textit{#1}}}}
 
+\definecolor{darkgreen}{rgb}{0.0, 0.5, 0.0}
+	
 \usepackage{url}
 \hypersetup{
   colorlinks   = true,    % Colours links instead of ugly boxes
-  urlcolor     = blue,    % Colour for external hyperlinks
+  urlcolor     = darkgreen,    % Colour for external hyperlinks
   linkcolor    = blue,    % Colour of internal links
-  citecolor    = red      % Colour of citations
+  citecolor    = darkblue % Colour of citations
 }
 
 %\usepackage[obeyspaces]{url}
@@ -173,6 +176,15 @@ Data-poor stock assessment models in use worldwide were reviewed and simulation 
 \newpage
 \tableofcontents
 
+\section*{Still To Do}
+
+
+\begin{itemize}
+ \item  \hyperlink{todo1}{Task 7 (section 8) needs work - expand briefly on 2.7}
+  \item \hyperlink{todo2}{Include the ROC'n'Roll appendix}
+ \item  \hyperlink{todo3}{Additional pieces on a delay-differential framework are less developed but conducted under mydas and could perhaps be included in an additional work section}
+\end{itemize}
+
 \newpage
 \section{Introduction}
 \input{include/intro.tex}  
@@ -243,7 +255,7 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
 \end{itemize}
 
 
-\subsection{Liason}
+\subsection{Liason}\label{task:liason}
 
 \begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
  \item \textbf{Objective} Meetings on a regular basis with the MI.
@@ -255,7 +267,7 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
  \end{itemize}
 \end{itemize}
 
-\subsection{Linkage}
+\subsection{Linkage}\label{task:link}
 
 \begin{itemize}[labelindent=\parindent,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
  \item \textbf{Objective} Linkage with other projects
@@ -287,9 +299,11 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
 \newpage\section{Simulations}
 \input{include/task5.tex}
 
-\newpage\section{Liason and Linkage}
+\newpage\section{Liason and Linkage}\label{sec:link}
 \coilin{[Expand briefly on section 2.7]}
 \input{include/task6.tex}
+
+\hypertarget{todo1}{\todo{Task 7 (section 8) needs work - expand briefly on 2.7}}
 \input{include/task7.tex}
 
 \newpage\clearpage
@@ -327,10 +341,16 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
 \includepdf[pages=-,pagecommand={},width=\textwidth]{include/12553688_File000007_240052393.pdf}
 
 \subsubsection{ROC}
+\hypertarget{todo2}{\todo{Include the ROC'n'Roll appendix}}
 \includepdf[pages=1,pagecommand={},width=\textwidth]{include/roc.pdf}
 
 \subsubsection{Pareto}
 \includepdf[pages=1,pagecommand={},width=\textwidth]{include/pareto.pdf}
+
+\subsubsection{Delay Difference}
+
+\hypertarget{todo3}{\todo{Additional pieces on a delay-differential framework are less developed but conducted under mydas and could perhaps be included in an additional work section}}
+
 
 \end{appendices}
 

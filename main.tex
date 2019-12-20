@@ -8,7 +8,6 @@
 % page headings
 \usepackage{fancyhdr}
 %\usepackage{lscape}
-
 %\usepackage[nomain,acronym,xindy,toc]{glossaries} % nomain, if you define glossaries in a file, and you use \include{INP-00-glossary}
 %\makeglossaries
 
@@ -146,6 +145,8 @@ morekeywords={*,...} % if you want to add more keywords to the set
 
 
 \begin{document}
+
+\includepdf[pages=1-2]{include/BiodiversityTemplate_MYDAS_first.pdf}
 %%stock.assesment.org
 
 \onehalfspacing
@@ -362,13 +363,14 @@ A peer review paper is being prepared, the results can be found in a \href{https
 %\includepdf[pages=-,pagecommand={},width=\textwidth]{include/pareto.pdf}
 
 
-\subsubsection{Delay Difference}
-
-\hypertarget{todo3}{\todo{Additional pieces on a delay-differential framework are less developed but conducted under mydas and could perhaps be included in an additional work section}}
-
+\subsubsection{Delay Differential}
+Additional pieces on a delay-differential framework are less developed but could be used to screen the dynamics of potential HCRs analytically. Towards this goal under MyDas, a continuous harvest control rule to mimic that of the current ICES framework and phase-plane analyses of coupled biomass-effort systems were derived and presented here.
+\includepdf[pages=-,pagecommand={},width=\textwidth]{include/cHCR.pdf}
+\includepdf[pages=-,pagecommand={},width=\textwidth]{include/equilibria.pdf}
 
 \end{appendices}
 
+\includepdf[pages=1-2]{include/BiodiversityTemplate_MYDAS_last.pdf}
 \end{document}
 
 

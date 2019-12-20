@@ -18,19 +18,19 @@ $f$ is derived from length based indicators and a number of potential length bas
 
 \begin{table}[h!]\centering
 \includegraphics[width=\textwidth]{figs/lib.png}
-\caption{Length based indicators.} %\coilin{[Remove `Select table column' from topleft in screengrab.]}}
+\caption{Length based indicators.} 
 \label{tab:lib}
 \end{table}
 
 The \textbf{mydas} package includes methods to simulate length frequency data and estimate indicators; Figure \ref{fig:ompollack} shows an OM based on pollack that was used to simulate indicators (Figure \ref{fig:libsim}).
 
-\begin{figure}[h]\centering
+\begin{figure}[h!]\centering
 \includegraphics[width=\textwidth]{figs/roc-finalts-pollack-1.png}
 \caption{Time series of simulated length based indicators, compared to $F/F_{MSY}$}
 \label{fig:ompollack}
 \end{figure}
 
-\begin{figure}[h]\centering
+\begin{figure}[h!]\centering
 \includegraphics[width=\textwidth]{figs/roc-finalinds-1.png}
 \caption{Time series of simulated length based indicators, compared to $F/F_{MSY}$}
 \label{fig:libsim}
@@ -44,4 +44,9 @@ The advised catch was mainly influenced by one component of the rule (the trend 
 Therefore two papers are currently being drafted. The first used Receiver Operating Characteristic (ROC) curves used to explore the setting of appropriate reference levels in the $f$ component of the catch rule for the \textbf{MyDas} case studies. In particular to explore how these depend on life-history traits and the nature of the time-series. The second evaluated the use of trends in an index without a reference level for pollack. To do this, a Management Strategy Evaluation (MSE) was conducted to evaluate an empirical harvest control rule (HCR) based on a trend in an index of
 abundance. The Operating Model (OM) was conditioning on pollack life-history characteristics and the HCR was based on that used by the Commission for the Conservation of Southern Bluefin Tuna (CCSBT). The HCR has several parameters that require tuning \citep{hillary2015scientific}, i.e. the parameters are found by choosing values that best meet the objectives of asset and stakeholders; i.e. optimises the outcomes modelled as a reward function.\\
 Preliminary work within {\bf{MyDas}} on the spectral decomposition of recruitment time series (\hyperref[appendix:spectral]{appendix}) provides a promising avenue to increase the realism of the simulated recruitment time series over simply increasing the process variability. 
+
+\subsubsection*{Derivation of a continuous HCR}
+
+\coilin{Work is also ongoing looking at equilibria for \href{https://drive.google.com/open?id=1ldTJfrVxNsIHD9s9W0jyNaeedLZqDIPS}{coupled biomass systems} this is potentially useful as it provides a theoretical basis for the development of Harvest Control Rules, and will allow the properties of candidate HCRs to be explored analytically prior to setting up MSE simulations.}
+
 

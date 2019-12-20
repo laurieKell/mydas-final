@@ -17,12 +17,19 @@
 \usepackage{booktabs}
 \usepackage{enumerate}
 
+\usepackage{comment}
+
+
 \setlength{\headheight}{15.2pt}
 \pagestyle{fancy}
 
 \usepackage{lscape}
 \usepackage{graphicx}
 \usepackage{color}
+
+%\usepackage[obeyspaces]{url}
+%\PassOptionsToPackage{obeyspaces}{url}
+
 \usepackage{hyperref}
 \hypersetup{colorlinks, urlcolor=darkblue}
 \usepackage{pdfpages}
@@ -167,11 +174,11 @@ morekeywords={*,...} % if you want to add more keywords to the set
 
 \begin{abstract}
 
-This report summarises the main activities and outcomes of MyDas (MSY proxies for DAta-limited Stocks) with respect to the proposed tasks: i) Stock prioritisation, ii) Data Collation, iii) Framework Development; iv) Performance Appraisal, v) Reference Point Comparison, vi) Liaison and vii) Linkage with other Projects.
+This report summarises the main activities and outcomes of MyDas (MSY proxies for DAta-limited Stocks) with respect to the main tasks, which were i) Stock Prioritisation, ii) Data Collation, iii) Framework Development; iv) Performance Appraisal, v) Reference Point Comparison, vi) Liaison and vii) Linkage with other Projects.
 
 The main outcomes were i) R packages with documentation, ii)  vignettes with reproducible examples, iii) manuscripts and peer review papers, and iv) evaluations of Management procedures for data poor stocks.
 
-Initially a number of stocks were proposed as potential case studies and then fisheries dependent and independent data and life history characteristics were collated.  After discussion with the Marine Institute (MI) seven case study stocks, i.e. sprat, brill, turbot, pollack, ray, razor clams and lobster, were selected, based on ecological and economic importance.
+Initially a number of stocks were proposed as potential case studies and then fisheries dependent and independent data and life history characteristics were collated.  After discussion with the Marine Institute (MI) seven case study stocks, i.e. sprat, brill, turbot, pollack, ray, razor clams and lobster, were selected, based on their importance to the ecosystem and economic value.
 
 Data-poor stock assessment models in use worldwide were reviewed and simulation tested. The best performing methods were identified and then implemented in a Management Strategy Evaluation framework based on R. Two R packages were developed: \textbf{FLife} for simulating stocks based on life history theory and \textbf{mydas} for running and testing data poor harvest control rules. The packages include a number of live vignettes with examples (links provided herein). The framework was tested at an MI workshop and results presented at the ICES Workshop On The Development Of Quantitative Assessment Methodologies Based On Life-History Traits, Exploitation Characteristics, And Other Relevant Parameters For Data-Limited Stocks (WKLIFE).
 
@@ -180,22 +187,16 @@ Data-poor stock assessment models in use worldwide were reviewed and simulation 
 \newpage
 \tableofcontents
 
-\section*{Still To Do}
+%\section*{Still To Do}
 
-
-\hans{Hans can add comments using \textbackslash hans\{...\}}
-
-\begin{itemize}
- \item  \hyperlink{todo1}{Task 7 (section 8) needs work - expand briefly on 2.7}
- %\item \hyperlink{todo2}{Include the ROC'n'Roll appendix}
- \item  \hyperlink{todo3}{Additional pieces on a delay-differential framework are less developed but conducted under mydas and could perhaps be included in an additional work section}
- \item \href{https://drive.google.com/open?id=1ldTJfrVxNsIHD9s9W0jyNaeedLZqDIPS}{Delay-difference}
- \item \href{https://drive.google.com/open?id=1ba_mw6bhLKfLrT5Pn_gXCXuPFoseYVxd}{RAM Recruitment}
-\end{itemize}
+%\begin{itemize}
+% \item  \hyperlink{todo1}{Task 7 (section 8) needs work - expand briefly on 2.7}
+%\end{itemize}
 
 \newpage
 \section{Introduction}
 \input{include/intro.tex}  
+
 
 \section{Tasks}
 There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Framework Development; iv) Performance Appraisal, v) Reference Point Comparison, vi) Liaison with Marine Institute, and vii) Linkage with other Projects. Here we summarise the main activities and outcomes, and provide links to appropriate reports and cloud based resources.
@@ -218,7 +219,7 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
  \item \textbf{Outcome} The data were collated into a PostgreSQL database \hyperref[appendix:db]{database} and \hyperref[appendix:code]{summarised}, using \href{https://drive.google.com/file/d/15Lb1Npyi-cOIPCLWbR4YrNWkAZuEyc1X/view?usp=sharing}{R code}.
  %\coilin{[make link live]} developed for processing. 
  \begin{itemize}
-    \item At the end of the project the data were archived on \href{https://drive.google.com/open?id=1bilqGhV1-JzEsPW_vQBkz65GwdjIsaky}{google drive}.
+    \item At the end of the project the data were taken offline and archived on \href{https://drive.google.com/open?id=1bilqGhV1-JzEsPW_vQBkz65GwdjIsaky}{google drive}.
  \end{itemize}
 \end{itemize}
 
@@ -228,7 +229,7 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
  \item \textbf{Objective} A number of data limited methods already exist, in order to allow them to be simulation tested and their performance compared they were implemented within a common R framework.    
  \item \textbf{Outcome} Data limited methods in use worldwide were summarised in a \href{https://docs.google.com/spreadsheets/d/17_qQdzDY41ZrL0yT6QtHpUR4_ydxx_xfCh4GiDqYymU/edit?usp=sharing}{google spreadsheet}. Following a review five catch-only and three length-only assessment methods were then compared, and the best performing methods identified.  
  \begin{itemize}
- \item Two peer review papers were produced that evaluated length based methods \citep{pons2019performance} and compared length and catch based methods \citep{pons2019catchlen}.
+ \item Two peer review papers were produced that evaluated length based methods \citep{pons2019performance} and compared length and catch based methods \citep{pons2019catchlen}. The manuscripts are included in the appendix. 
  \item  The best performing methods were Length Based Spawning Potential Ratio \citep[LBSPR][]{hordyk2014novel} and Depletion Based  Stock Reduction Analysis \citep[DBSRA][]{dick2011depletion}. 
  \item These were then implemented as in the mydas package, see the vignettes \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/4/simtest-lbspr.html}{lbspr} and\href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/tasks/4/simtest-bdsra.html}{bdsra} written to ensure reproducibility. %\coilin{[\texttt{echo = TRUE} these vignettes for reproducibility?]}.
  \end{itemize}
@@ -240,7 +241,7 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
  \item \textbf{Objective} Method performance appraisal was based on the development of a set of diagnostics that can be applied across a range of models to assess the stability of the model, sensitivity to assumptions and bias.
  
  \item \textbf{Outcome} A simulation framework based on R. This was based on \href{http://www.flr-project.org/}{FLR}, a collection of tools for quantitative fisheries science developed in the R language, that facilitates the construction of simulation models of fisheries systems. Development focussed on two main R packages, \href{https://github.com/flr/flife}{FLife} which uses life history theory to build simulation models and 
-    \href{https://github.com/flr/mydas/wiki}{mydas} which provides an interface to the data poor methods for simulation testing. \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/vignettes.html}{Vignettes} document the approach and provide worked examples. 
+    \href{https://github.com/flr/mydas/wiki}{mydas} which provides an interface to the data poor methods for simulation testing. \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/mydas_vignettes.html}{Vignettes} document the approach and provide worked examples. 
     \begin{itemize}
    \item Operating Models conditioned on life history theory were developed for each of the 
     \href{https://3o2y9wugzp1kfxr5hvzgzq-on.drv.tw/MyDas/om.html}{case studies}.
@@ -309,10 +310,10 @@ There were seven tasks i.e. i) Stock prioritisation, ii) Data Collation, iii) Fr
 \input{include/task5.tex}
 
 \newpage\section{Liason and Linkage}\label{sec:link}
-\coilin{[Expand briefly on section 2.7]}
+%\coilin{[Expand briefly on section 2.7]}
 \input{include/task6.tex}
 
-\hypertarget{todo1}{\todo{Task 7 (section 8) needs work - expand briefly on 2.7}}
+%\hypertarget{todo1}{\todo{Task 7 (section 8) needs work - expand briefly on 2.7}}
 \input{include/task7.tex}
 
 \newpage\clearpage
